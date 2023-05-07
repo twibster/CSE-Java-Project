@@ -1,0 +1,51 @@
+/*
+After the server is started, it will listen for incoming HTTP requests on port 8080.
+When a request is received, the Myfolder class will send back a response with the text "يا مرحب بالرجالة".
+
+If a socket connection is accepted on port 8080, the server will send back an HTTP response containing the current date and time. 
+*/
+
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.InetSocketAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.Date;
+import com.sun.net.httpserver.HttpExchange;
+import com.sun.net.httpserver.HttpHandler;
+import com.sun.net.httpserver.HttpServer;
+
+/**
+ *
+ * @author mahmoud
+ */
+                        
+class Myfolder implements HttpHandler {
+    public void handle(HttpExchange exchange) throws IOException {
+        String response = "يا مرحب بالرجالة";
+        exchange.sendResponseHeaders(200, response.length());
+        OutputStream os = exchange.getResponseBody();
+        os.write(response.getBytes());
+        os.close();
+    }
+}
+
+public class WebServer {
+    public static void main(String[] args) throws Exception {
+        
+        HttpServer server_1 = HttpServer.create(new InetSocketAddress(8080), 0);
+        server_1.createContext("/", new Myfolder());
+        server_1.start();
+        System.out.println("Server started on port 8080...");
+        ServerSocket server_2 = new ServerSocket(8080); 
+        
+        while (true) { 
+                    try (Socket socket = server_2.accept()) {
+                     Date today = new Date();
+                     String httpResponse = "HTTP/1.1 200 OK\r\n\r\n" + today;
+                      socket.getOutputStream() .write(httpResponse.getBytes("UTF-8")); 
+                      }
+                      
+                      }
+    }
+}
