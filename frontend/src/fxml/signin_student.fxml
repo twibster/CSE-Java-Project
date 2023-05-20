@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="530.0" minWidth="650.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #457b9d;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.studentcontroller">
+   <children>
+      <AnchorPane layoutX="295.0" layoutY="165.0" minHeight="300.0" minWidth="300.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Text layoutX="51.0" layoutY="45.0" scaleX="1.25" scaleY="1.35" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your Sign-in Credentials" textAlignment="CENTER">
+               <fill>
+                  <LinearGradient endX="1.0" endY="0.3977272600838632" startX="0.45833338390697137" startY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.658823549747467" green="0.8549019694328308" blue="0.8627451062202454" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.526829268292683">
+                           <color>
+                              <Color red="0.6621999740600586" green="0.8534066677093506" blue="0.8600000143051147" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9450980424880981" green="0.9803921580314636" blue="0.9333333373069763" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Button accessibleText="Login" layoutX="100.0" layoutY="255.0" mnemonicParsing="false" onAction="#studentsigninclick" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #2F2B43; -fx-background-radius: 20;" text="Sign-in" textFill="#a8dadc">
+               <effect>
+                  <Blend />
+               </effect>
+            </Button>
+            <AnchorPane layoutY="75.0" maxWidth="300.0" minHeight="60.0" minWidth="300.0" prefHeight="60.0" prefWidth="300.0">
+               <children>
+                  <TextField layoutY="33.0" prefHeight="20.0" promptText="Enter Your ID" style="-fx-background-color: #2F2B43; -fx-background-radius: 30; -fx-text-inner-color: #C6C6C6;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Text layoutX="25.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID" textAlignment="CENTER">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="0.3977272600838632" startX="0.45833338390697137" startY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.658823549747467" green="0.8549019694328308" blue="0.8627451062202454" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.526829268292683">
+                                 <color>
+                                    <Color red="0.6621999740600586" green="0.8534066677093506" blue="0.8600000143051147" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.9450980424880981" green="0.9803921580314636" blue="0.9333333373069763" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="160.0" maxWidth="300.0" minHeight="60.0" minWidth="300.0" prefHeight="60.0" prefWidth="300.0">
+               <children>
+                  <PasswordField layoutY="33.0" prefHeight="20.0" promptText="Enter Your Password" style="-fx-background-color: #2F2B43; -fx-background-radius: 30; -fx-text-inner-color: #C6C6C6;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Password" textAlignment="CENTER">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="0.3977272600838632" startX="0.45833338390697137" startY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.658823549747467" green="0.8549019694328308" blue="0.8627451062202454" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.526829268292683">
+                                 <color>
+                                    <Color red="0.6621999740600586" green="0.8534066677093506" blue="0.8600000143051147" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.9450980424880981" green="0.9803921580314636" blue="0.9333333373069763" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane minWidth="215.0" prefHeight="530.0" prefWidth="215.0" style="-fx-background-color: #1d3557;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane layoutX="5.0" layoutY="35.0" minWidth="215.0" prefHeight="200.0" prefWidth="215.0">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="80.0" layoutX="68.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/icons8_student_male_64px.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="68.0" layoutY="155.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Sign-in" textAlignment="CENTER" AnchorPane.leftAnchor="63.0" AnchorPane.rightAnchor="65.046484375">
+                     <fill>
+                        <LinearGradient endX="0.507575739513744" endY="0.0037878805940801397" startY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.658823549747467" green="0.8549019694328308" blue="0.8627451062202454" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.526829268292683">
+                                 <color>
+                                    <Color red="0.6621999740600586" green="0.8534066677093506" blue="0.8600000143051147" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.9450980424880981" green="0.9803921580314636" blue="0.9333333373069763" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <Button layoutX="28.0" layoutY="290.0" minHeight="30.0" minWidth="160.0" mnemonicParsing="false" onAction="#backtomainpage" prefHeight="30.0" prefWidth="160.0" style="-fx-background-radius: 30; -fx-background-color: #2F2B43;" text="Return to Previous Page" textFill="#ffffffe7" />
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="90.0" fitWidth="88.0" layoutX="295.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/icons8_triller_app_64px_1.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
