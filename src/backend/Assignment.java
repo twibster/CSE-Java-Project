@@ -16,15 +16,14 @@ public class Assignment{
     private final LocalDateTime created = LocalDateTime.now();
 
     public Assignment(User creator, String title, String body, String attachment, LocalDateTime deadline){
-        this.id = count;
         this.creator = creator;
         this.title = title;
         this.body = body;
         this.attachment = attachment;
         this.deadline = deadline;
 
+        this.id = count++;
         database.add(this);
-        count++;
     }
     public Assignment(User creator, String title, String body, LocalDateTime deadline){
         this.id = count;

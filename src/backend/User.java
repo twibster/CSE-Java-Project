@@ -14,13 +14,14 @@ public class User {
     Positions position;
 
     public User(String first_name, String last_name, String email, String password, Positions position) throws Exception {
-        this.id = count++;
+
         this.setFirst_name(first_name);
         this.setLast_name(last_name);
         this.setEmail(email);
         this.setPassword(password);
         this.position = position;
 
+        this.id = count++;
         database.add(this);
     }
     public String getFirst_name(){
