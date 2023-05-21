@@ -1,0 +1,89 @@
+package backend;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+
+public class Assignment{
+    private static int count;
+    private static ArrayList<Assignment> database = new ArrayList<>();
+    final int id;
+    final User creator;
+    private String title;
+    private String body;
+    private String attachment=null;
+
+    private LocalDateTime deadline;
+    private final LocalDateTime created = LocalDateTime.now();
+
+    public Assignment(User creator, String title, String body, String attachment, LocalDateTime deadline){
+        this.id = count;
+        this.creator = creator;
+        this.title = title;
+        this.body = body;
+        this.attachment = attachment;
+        this.deadline = deadline;
+
+        database.add(this);
+        count++;
+    }
+    public Assignment(User creator, String title, String body, LocalDateTime deadline){
+        this.id = count;
+        this.creator = creator;
+        this.title = title;
+        this.body = body;
+        this.deadline = deadline;
+
+        database.add(this);
+        count++;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) throws Exception {
+        this.title = Validator.LengthValidator(title, 3);
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) throws Exception {
+        this.body = Validator.LengthValidator(body,20);
+    }
+
+    public String getAttachment() {
+        return attachment;
+    }
+
+    public void setAttachment(String attachment) throws Exception {
+        this.attachment = Validator.attachmentValidator(attachment);
+    }
+
+    public void setDeadline(LocalDateTime deadline) {
+        this.deadline = deadline;
+    }
+
+    public LocalDateTime getCreated() {
+        return created;
+    }
+
+    public void deleteAssignment(Assignment assignment){
+        database.remove(assignment);
+        assignment=null;
+    }
+
+    @Override
+    public String toString() {
+        return "Assignment{" +
+                "id=" + id +
+                ", creator_id=" + creator.id+
+                ", title='" + title + '\'' +
+                ", body='" + body + '\'' +
+                ", attachment='" + attachment + '\'' +
+                ", deadline=" + deadline +
+                ", created=" + created +
+                '}';
+    }
+}
