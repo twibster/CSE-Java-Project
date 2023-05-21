@@ -11,44 +11,16 @@ public class StudentSystemController {
 	
 	private Stage stage;
 	private Scene scene;
-
 	
     @FXML
-    void onAdministratorButtonClick(ActionEvent event) throws IOException {
-	    
-	    
-	    Parent root = FXMLLoader.load(getClass().getResource("/fxml/signin_admin.fxml"));
+    void signin(ActionEvent event) throws IOException {
+    	Parent root = FXMLLoader.load(getClass().getResource("/fxml/signin_user.fxml"));
 	    
 	    stage = (Stage)(((Node) event.getSource()).getScene().getWindow());
 	    scene = new Scene(root);
 	    stage.setScene(scene);
 	    
 	    stage.show();
-
-    }
-
-    @FXML
-    void onStudentButtonClick(ActionEvent event) throws IOException {
-	    Parent root = FXMLLoader.load(getClass().getResource("/fxml/signin_student.fxml"));
-	    
-	    stage = (Stage)(((Node) event.getSource()).getScene().getWindow());
-	    scene = new Scene(root);
-	    stage.setScene(scene);
-	    
-	    stage.show();
-
-    }
-
-    @FXML
-    void onTeacherButtonClick(ActionEvent event) throws IOException {
-	       Parent root = FXMLLoader.load(getClass().getResource("/fxml/signin_teacher.fxml"));
-		    
-		    stage = (Stage)(((Node) event.getSource()).getScene().getWindow());
-		    scene = new Scene(root);
-		    stage.setScene(scene);
-		    
-		    stage.show();
-
     }
 
     @FXML
@@ -61,6 +33,11 @@ public class StudentSystemController {
 	    
 	    stage.show();
 
+    }
+    
+    @FXML
+    void systemexit(ActionEvent event) {
+    	System.exit(0);
     }
 
 }
