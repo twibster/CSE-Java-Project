@@ -3,8 +3,7 @@ package controllers;
 import java.io.IOException;
 
 import backend.Positions;
-import backend.Student;
-import backend.User;
+import backend.users.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -105,7 +104,7 @@ public class signupcontroller {
     	}
     	else {
     	position = roles.getValue();
-		User user = new User(txtfname.getText(), txtlname.getText(), txtemail.getText(), txtpassword.getText(), position);
+		User user = User.initializeChild(txtfname.getText(), txtlname.getText(), txtemail.getText(), txtpassword.getText(), position);
 		System.out.println(user);
     	}
     }

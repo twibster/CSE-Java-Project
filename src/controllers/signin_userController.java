@@ -2,7 +2,7 @@ package controllers;
 
 import java.io.IOException;
 
-import backend.User;
+import backend.users.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -37,9 +37,8 @@ public class signin_userController {
 
     @FXML
     void studentsigninclick(ActionEvent event) throws Exception {
-        Object[] result = User.fetchByEmail(txtid.getText());
-        if (result[0] != null){
-            User user = (User) result[0];
+        User user = User.fetchByEmail(txtid.getText());
+        if (user != null){
             if (user.checkPassword(txtpassword.getText())){
                 Parent root = FXMLLoader.load(getClass().getResource("/fxml/student/homepage_student.fxml"));
 
@@ -50,8 +49,9 @@ public class signin_userController {
                 stage.show();
                 return;
             }
+            throw new Exception("Incorrect Password");
         }
-        throw new Exception("Fuck off bitch");
+        throw new Exception("User does not exit");
 
 
     }
