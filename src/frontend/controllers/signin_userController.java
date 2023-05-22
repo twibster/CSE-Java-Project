@@ -26,13 +26,7 @@ public class signin_userController {
 
     @FXML
     void backtomainpage(ActionEvent event) throws IOException {
-    	Parent root = FXMLLoader.load(getClass().getResource("/frontend/fxml/student_system.fxml"));
-	    
-	    stage = (Stage)(((Node) event.getSource()).getScene().getWindow());
-	    scene = new Scene(root);
-	    stage.setScene(scene);
-	    
-	    stage.show();
+        Utils.redirectScene(this.getClass(),event,"/frontend/fxml/student_system.fxml", stage, scene);
     }
 
     @FXML
@@ -40,14 +34,7 @@ public class signin_userController {
         User user = User.fetchByEmail(txtid.getText());
         if (user != null){
             if (user.checkPassword(txtpassword.getText())){
-                Parent root = FXMLLoader.load(getClass().getResource("/frontend/fxml/new.fxml"));
-
-                stage = (Stage)(((Node) event.getSource()).getScene().getWindow());
-                scene = new Scene(root);
-                stage.setScene(scene);
-
-                stage.show();
-                return;
+                Utils.redirectScene(this.getClass(),event,"/frontend/fxml/new.fxml", stage, scene);
             }
             throw new Exception("Incorrect Password");
         }

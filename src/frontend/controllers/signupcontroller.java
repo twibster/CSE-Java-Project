@@ -8,9 +8,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
@@ -84,16 +81,7 @@ public class signupcontroller {
 
     @FXML
 	void returnToMainPage(ActionEvent event) throws IOException {
-		System.out.println("Administrator button clicked!");
-
-		Parent root = FXMLLoader.load(getClass().getResource("/frontend/fxml/student_system.fxml"));
-
-		stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
-		scene = new Scene(root);
-		stage.setScene(scene);
-
-		stage.show();
-
+		Utils.redirectScene(this.getClass(),event,"/frontend/fxml/student_system.fxml", stage, scene);
 	}
     
     @FXML
