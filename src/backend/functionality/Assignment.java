@@ -1,20 +1,21 @@
-package backend;
+package backend.functionality;
+
+import backend.Validators;
+import backend.users.User;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Assignment{
     private static int count;
-    private static ArrayList<Assignment> database = new ArrayList<>();
+    public static ArrayList<Assignment> database = new ArrayList<>();
     final int id;
     final User creator;
     private String title;
     private String body;
     private String attachment=null;
-
     private LocalDateTime deadline;
     private final LocalDateTime created = LocalDateTime.now();
-
     public Assignment(User creator, String title, String body, String attachment, LocalDateTime deadline){
         this.creator = creator;
         this.title = title;
@@ -41,7 +42,7 @@ public class Assignment{
     }
 
     public void setTitle(String title) throws Exception {
-        this.title = Validator.LengthValidator(title, 3);
+        this.title = Validators.lengthValidator(title, 3);
     }
 
     public String getBody() {
@@ -49,7 +50,7 @@ public class Assignment{
     }
 
     public void setBody(String body) throws Exception {
-        this.body = Validator.LengthValidator(body,20);
+        this.body = Validators.lengthValidator(body,20);
     }
 
     public String getAttachment() {
@@ -57,13 +58,12 @@ public class Assignment{
     }
 
     public void setAttachment(String attachment) throws Exception {
-        this.attachment = Validator.attachmentValidator(attachment);
+        this.attachment = Validators.attachmentValidator(attachment);
     }
 
-    public void setDeadline(LocalDateTime deadline) {
-        this.deadline = deadline;
+    public void setDeadline(LocalDateTime deadline) throws Exception {
+        this.deadline = Validators.deadlineValidator(deadline);
     }
-
     public LocalDateTime getCreated() {
         return created;
     }
