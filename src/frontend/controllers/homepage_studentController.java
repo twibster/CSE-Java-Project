@@ -1,4 +1,4 @@
-package controllers;
+package frontend.controllers;
 
 import java.io.IOException;
 import java.net.URL;
@@ -41,7 +41,7 @@ public class homepage_studentController {
     		pane.getChildren().removeAll();
     	}
     	
-    	Parent fxml = FXMLLoader.load(getClass().getResource("/fxml/student/assignments.fxml"));
+    	Parent fxml = FXMLLoader.load(getClass().getResource("/frontend/fxml/student/assignments.fxml"));
     	pane.getChildren().removeAll();
     	pane.getChildren().addAll(fxml);
     	
@@ -53,7 +53,7 @@ public class homepage_studentController {
 
     @FXML
     void showProfile(ActionEvent event) throws IOException {
-    	Parent fxml = FXMLLoader.load(getClass().getResource("/fxml/student/profile.fxml"));
+    	Parent fxml = FXMLLoader.load(getClass().getResource("/frontend/fxml/student/profile.fxml"));
     	pane.getChildren().removeAll();
     	pane.getChildren().addAll(fxml);
 

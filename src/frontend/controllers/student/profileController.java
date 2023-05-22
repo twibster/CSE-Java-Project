@@ -1,4 +1,4 @@
-package controllers.student;
+package frontend.controllers.student;
 
 import java.io.IOException;
 import java.net.URL;
