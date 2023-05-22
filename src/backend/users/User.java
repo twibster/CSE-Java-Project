@@ -1,12 +1,16 @@
-package backend;
+package backend.users;
+
+import backend.Utils;
+import backend.Positions;
+import backend.Validators;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class User {
+public abstract class User {
     private static int count;
     public static ArrayList<User> database = new ArrayList<>();
-    final int id;
+    public final int id;
     private String first_name;
     private String last_name;
     private String email;
@@ -29,7 +33,7 @@ public class User {
     }
 
     public void setFirst_name(String first_name) throws Exception {
-        this.first_name = Validator.LengthValidator(first_name,3);;
+        this.first_name = Validators.lengthValidator(first_name,3);;
     }
 
     public String getLast_name() {
@@ -37,7 +41,7 @@ public class User {
     }
 
     public void setLast_name(String last_name) throws Exception {
-        this.last_name = Validator.LengthValidator(last_name, 3);
+        this.last_name = Validators.lengthValidator(last_name, 3);
     }
 
     public String getEmail() {
@@ -45,19 +49,18 @@ public class User {
     }
 
     public void setEmail(String email) throws Exception {
-        Object[] queryResult = fetchByEmail(email);
-        if (queryResult[0] != null){
-            throw new Exception("This email is already in use");
+        if (fetchByEmail(email) != null){
+            throw new Exception("Email is already in use");
         }
-        this.email = Validator.EmailValidator(email);
+        this.email = Validators.emailValidator(email);
     }
 
     public void setPassword(String password) throws Exception {
-        this.password = Functions.Hash(Validator.PasswordValidator(password));
+        this.password = Utils.hash(Validators.passwordValidator(password));
     }
 
     public boolean checkPassword(String password){
-        return Functions.CheckHash(password, this.password);
+        return Utils.checkHash(password, this.password);
     }
 
     // Start of static methods
@@ -65,14 +68,27 @@ public class User {
         database.remove(user);
         user = null;
     }
-    public static Object[] fetchByEmail(String email){
-        Object[] queryResult = {null};
+    public static User fetchByEmail(String email){
         for(User user: database){
             if (Objects.equals(user.email, email)) {
-                queryResult[0] = user;
+                return user;
             }
         }
-        return queryResult;
+        return null;
+    }
+    public static User initializeChild(String first_name, String last_name, String email, String password, Positions position) throws Exception {
+        switch (position) {
+            case Admin -> {
+                return new Admin(first_name, last_name, email, password, position);
+            }
+            case Teacher -> {
+                return new Teacher(first_name, last_name, email, password, position);
+            }
+            case Student -> {
+                return new Student(first_name, last_name, email, password, position);
+            }
+        }
+        return null;
     }
     @Override
     public String toString() {
