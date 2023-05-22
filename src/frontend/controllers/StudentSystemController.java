@@ -1,4 +1,4 @@
-package controllers;
+package frontend.controllers;
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
@@ -14,7 +14,7 @@ public class StudentSystemController {
 	
     @FXML
     void signin(ActionEvent event) throws IOException {
-    	Parent root = FXMLLoader.load(getClass().getResource("/fxml/signin_user.fxml"));
+    	Parent root = FXMLLoader.load(getClass().getResource("/frontend/fxml/signin_user.fxml"));
 	    
 	    stage = (Stage)(((Node) event.getSource()).getScene().getWindow());
 	    scene = new Scene(root);
@@ -25,7 +25,7 @@ public class StudentSystemController {
 
     @FXML
     void signup(ActionEvent event) throws IOException {
-    	Parent root = FXMLLoader.load(getClass().getResource("/fxml/signup.fxml"));
+    	Parent root = FXMLLoader.load(getClass().getResource("/frontend/fxml/signup.fxml"));
 	    
 	    stage = (Stage)(((Node) event.getSource()).getScene().getWindow());
 	    scene = new Scene(root);

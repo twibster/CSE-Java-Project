@@ -1,4 +1,4 @@
-package controllers;
+package frontend.controllers;
 
 import java.io.IOException;
 
@@ -86,7 +86,7 @@ public class signupcontroller {
 	void returnToMainPage(ActionEvent event) throws IOException {
 		System.out.println("Administrator button clicked!");
 
-		Parent root = FXMLLoader.load(getClass().getResource("/fxml/student_system.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/frontend/fxml/student_system.fxml"));
 
 		stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
 		scene = new Scene(root);
