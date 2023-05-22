@@ -40,7 +40,7 @@ public class signin_userController {
         User user = User.fetchByEmail(txtid.getText());
         if (user != null){
             if (user.checkPassword(txtpassword.getText())){
-                Parent root = FXMLLoader.load(getClass().getResource("/fxml/student/homepage_student.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/fxml/new.fxml"));
 
                 stage = (Stage)(((Node) event.getSource()).getScene().getWindow());
                 scene = new Scene(root);
