@@ -2,6 +2,7 @@ module controllers{
     requires javafx.controls;
     requires javafx.fxml;
     requires spring.security.core;
+    requires spring.security.crypto;
 
     opens controllers to javafx.fxml;
     opens controllers.student to javafx.fxml;
