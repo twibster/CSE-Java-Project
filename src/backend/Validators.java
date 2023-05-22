@@ -4,12 +4,14 @@ import java.time.LocalDateTime;
 
 public class Validators {
      public static String lengthValidator(String toCheck, int requiredLength) throws Exception {
+         toCheck = toCheck.strip();
          if (toCheck.length()>= requiredLength){
             return toCheck;
         }
         throw new Exception("The provided string is less than " + requiredLength);
     }
     public static String emailValidator(String email) throws Exception {
+         email = email.strip();
          String[] beforeAndAfterAt = email.split("@");
          if (beforeAndAfterAt.length == 2){
              String[] beforeAndAfterDot = beforeAndAfterAt[1].split("\\.");
@@ -35,6 +37,7 @@ public class Validators {
          return password;
     }
     public static String attachmentValidator(String attachment) throws Exception{
+         attachment = attachment.strip();
          String[] beforeAndAfterDot = attachment.split("\\.");
          if (beforeAndAfterDot.length == 2){
              return attachment;
