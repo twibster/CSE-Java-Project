@@ -9,4 +9,7 @@ module controllers{
     exports controllers;
     exports controllers.student to javafx.fxml;
     exports backend;
+    exports backend.tests;
+    exports backend.users;
+    exports backend.functionality;
 }

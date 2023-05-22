@@ -1,4 +1,11 @@
-package backend;
+package backend.tests;
+
+import backend.Positions;
+import backend.users.Admin;
+import backend.users.Student;
+import backend.users.User;
+import backend.functionality.Assignment;
+
 
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -34,12 +41,12 @@ class UserTest{
                     password,
                     Positions.Student);
         } catch (Exception e) {
-            if (Objects.equals(e.getMessage(), "Not a valid email")) {
+            if (Objects.equals(e.getMessage(), "Email is already in use")) {
                 System.out.println("2- Existence Passed!");
                 return;
             }
         }
-        System.out.println("2- Email Existence Passed!");
+        System.out.println("2- Failed!");
     }
 }
 
@@ -51,7 +58,6 @@ class AssignmentTest{
                 "This is an actual assignment, stay tudent lol",
                 LocalDateTime.of(2024,02,12,4,40)
         );
-        System.out.println(assignment);
         System.out.println("3- Add Assignment Passed!");
         return assignment;
     }
