@@ -1,4 +1,6 @@
-package backend;
+package backend.users;
+
+import backend.Positions;
 
 public class Teacher extends User {
 
