@@ -1,16 +1,15 @@
 package backend;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class Validator{
-     public static String LengthValidator(String toCheck, int requiredLength) throws Exception {
+public class Validators {
+     public static String lengthValidator(String toCheck, int requiredLength) throws Exception {
         if (toCheck.length()>= requiredLength){
             return toCheck;
         }
         throw new Exception("The provided string is less than " + requiredLength);
     }
-    public static String EmailValidator(String email) throws Exception {
+    public static String emailValidator(String email) throws Exception {
          String[] beforeAndAfterAt = email.split("@");
          if (beforeAndAfterAt.length == 2){
              String[] beforeAndAfterDot = beforeAndAfterAt[1].split("\\.");
@@ -20,7 +19,7 @@ public class Validator{
          }
          throw new Exception("Not a valid email");
     }
-    public static String PasswordValidator(String password) throws Exception{
+    public static String passwordValidator(String password) throws Exception{
          boolean upper = false, lower = false, numeric = false;
          int length = 0;
          for(char ch: password.toCharArray()){
@@ -42,9 +41,10 @@ public class Validator{
          }
          throw new Exception("Not a valid attachment");
     }
-//    public static LocalDateTime deadlineValidator(LocalDateTime deadline) throws Exception{
-//         if (deadline < LocalDateTime.now()){
-//
-//         }
-//    }
+    public static LocalDateTime deadlineValidator(LocalDateTime deadline) throws Exception{
+         if (deadline.isAfter(LocalDateTime.now())){
+             return deadline;
+         }
+         throw new Exception("Are you living in the past?");
+    }
 }
