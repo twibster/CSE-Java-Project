@@ -1,5 +1,6 @@
 package backend.functionality;
 
+import backend.Positions;
 import backend.Validators;
 import backend.users.User;
 
@@ -16,7 +17,8 @@ public class Assignment{
     private String attachment=null;
     private LocalDateTime deadline;
     private final LocalDateTime created = LocalDateTime.now();
-    public Assignment(User creator, String title, String body, String attachment, LocalDateTime deadline){
+    public Assignment(User creator, String title, String body, String attachment, LocalDateTime deadline) throws Exception {
+        Validators.positionValidator(creator.getPosition(), new Positions[]{Positions.Admin, Positions.Teacher});
         this.creator = creator;
         this.title = title;
         this.body = body;
@@ -26,7 +28,8 @@ public class Assignment{
         this.id = count++;
         database.add(this);
     }
-    public Assignment(User creator, String title, String body, LocalDateTime deadline){
+    public Assignment(User creator, String title, String body, LocalDateTime deadline) throws Exception {
+        Validators.positionValidator(creator.getPosition(), new Positions[]{Positions.Admin, Positions.Teacher});
         this.id = count;
         this.creator = creator;
         this.title = title;

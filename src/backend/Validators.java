@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class Validators {
      public static String lengthValidator(String toCheck, int requiredLength) throws Exception {
-        if (toCheck.length()>= requiredLength){
+         if (toCheck.length()>= requiredLength){
             return toCheck;
         }
         throw new Exception("The provided string is less than " + requiredLength);
@@ -46,5 +46,13 @@ public class Validators {
              return deadline;
          }
          throw new Exception("Are you living in the past?");
+    }
+    public static Positions positionValidator(Positions userPosition, Positions[] requiredPosition) throws Exception {
+         for (Positions position: requiredPosition){
+             if (userPosition == position){
+                 return userPosition;
+             }
+         }
+         throw new Exception("You do not have permission to do this");
     }
 }

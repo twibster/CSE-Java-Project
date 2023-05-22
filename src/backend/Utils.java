@@ -17,5 +17,4 @@ public class Utils {
     public static Boolean checkHash(String toCompare, String storedHash){
         return BCrypt.checkpw(toCompare, storedHash);
     }
-
 }

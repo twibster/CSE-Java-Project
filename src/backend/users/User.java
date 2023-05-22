@@ -63,6 +63,10 @@ public abstract class User {
         return Utils.checkHash(password, this.password);
     }
 
+    public Positions getPosition() {
+        return position;
+    }
+
     // Start of static methods
     public static void deleteUser(User user){
         database.remove(user);
