@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="530.0" prefWidth="650.0" style="-fx-background-color: #457B9D;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.signupcontroller">
+   <children>
+      <VBox focusTraversable="true" layoutX="150.0" layoutY="79.0" prefHeight="350.0" prefWidth="350.0" spacing="12.0" style="-fx-background-color: #F1FAEE; -fx-background-radius: 15;">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="350.0">
+               <children>
+                  <TextField fx:id="txtfname" layoutX="50.0" layoutY="15.0" prefHeight="20.0" prefWidth="250.0" promptText="First Name" style="-fx-background-radius: 20; -fx-background-color: #A8DADC;" AnchorPane.topAnchor="15.0" />
+                  <Text layoutX="52.0" layoutY="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  First Name" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="81.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="350.0">
+               <children>
+                  <TextField fx:id="txtlname" layoutX="50.0" layoutY="15.0" prefHeight="20.0" prefWidth="250.0" promptText="Last Name" style="-fx-background-radius: 20; -fx-background-color: #A8DADC;" AnchorPane.topAnchor="15.0" />
+                  <Text layoutX="52.0" layoutY="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Last Name" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="81.0" prefHeight="40.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="txtemail" layoutX="50.0" layoutY="14.0" prefHeight="20.0" prefWidth="250.0" promptText="Example@gmail.com" style="-fx-background-radius: 20; -fx-background-color: #A8DADC;" AnchorPane.topAnchor="14.0" />
+                  <Text layoutX="52.0" layoutY="4.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  Email" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="65.0" prefHeight="40.0" prefWidth="194.0">
+               <children>
+                  <Text layoutX="52.0" layoutY="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+                  <PasswordField fx:id="txtpassword" layoutX="50.0" layoutY="16.0" minWidth="250.0" prefHeight="26.0" prefWidth="250.0" promptText="Enter Your Password" style="-fx-background-color: #A8DADC; -fx-background-radius: 20;" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="adminkey" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="350.0" visible="false">
+               <children>
+                  <Text layoutX="52.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Key" />
+                  <PasswordField fx:id="txtadminkey" layoutX="52.0" layoutY="20.0" minWidth="250.0" prefHeight="26.0" prefWidth="250.0" promptText="Enter Your Admin KEY" style="-fx-background-color: #A8DADC; -fx-background-radius: 20;" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="rolepane" layoutY="50.0" prefHeight="26.0" prefWidth="350.0">
+               <children>
+                  <ComboBox fx:id="roles" layoutX="165.0" layoutY="20.0" prefHeight="26.0" prefWidth="136.0" promptText="Choose your Role" style="-fx-background-color: #A8DADC; -fx-background-radius: 165;" visibleRowCount="2" />
+                  <Text layoutX="54.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Your Role :">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </children>
+         <padding>
+            <Insets top="21.0" />
+         </padding>
+      </VBox>
+      <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="24.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/icons8_triller_app_64px_1.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="txtsignup" boundsType="VISUAL" layoutX="253.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Sign-up" textAlignment="CENTER" AnchorPane.leftAnchor="254.62353515625">
+         <fill>
+            <LinearGradient endX="0.8977273522001324" startX="0.7992423935370012" startY="0.6931818254066235">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.658823549747467" green="0.8549019694328308" blue="0.8627451062202454" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+         <font>
+            <Font name="AGA Arabesque" size="25.0" />
+         </font>
+      </Text>
+      <Button layoutX="160.0" layoutY="467.0" minHeight="30.0" minWidth="150.0" mnemonicParsing="false" onAction="#returnToMainPage" style="-fx-background-color: #1D3557; -fx-background-radius: 30; -fx-text-fill: #E7FBFF;" text="Return to main page" />
+      <Text fx:id="signupswitch" fill="WHITE" layoutX="234.0" layoutY="453.0" onMouseClicked="#adminsignup" strokeType="OUTSIDE" strokeWidth="0.0" text="Click here to sign-up as an admin">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Text>
+      <Button layoutX="339.0" layoutY="467.0" minHeight="30.0" minWidth="150.0" mnemonicParsing="false" onAction="#signup" style="-fx-background-color: #1D3557; -fx-background-radius: 30; -fx-text-fill: #E7FBFF;" text="Sign-up" />
+   </children>
+</AnchorPane>
