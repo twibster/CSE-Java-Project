@@ -28,6 +28,14 @@ public class mainprofile implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        Parent fxml;
+        try {
+            fxml = FXMLLoader.load(getClass().getResource("/frontend/fxml/homepage/profile.fxml"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        pane.getChildren().removeAll();
+        pane.getChildren().addAll(fxml);
         // Initialize your controller here
     }
 
