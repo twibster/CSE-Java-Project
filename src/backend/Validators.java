@@ -3,13 +3,15 @@ package backend;
 import java.time.LocalDateTime;
 
 public class Validators {
+    public static String passexcep;
      public static String lengthValidator(String toCheck, int requiredLength) throws Exception {
          toCheck = toCheck.strip();
-         if (toCheck.length()>= requiredLength){
-            return toCheck;
-        }
-        throw new Exception("The provided string is less than " + requiredLength);
-    }
+         if (toCheck.length() >= requiredLength) {
+             return toCheck;
+         }
+         else{return null;}
+     }
+
     public static String emailValidator(String email) throws Exception {
          email = email.strip();
          String[] beforeAndAfterAt = email.split("@");
@@ -19,8 +21,10 @@ public class Validators {
                  return email;
              }
          }
-         throw new Exception("Not a valid email");
+         else {return null;}
+        return email;
     }
+
     public static String passwordValidator(String password) throws Exception{
          boolean upper = false, lower = false, numeric = false;
          int length = 0;
@@ -30,10 +34,10 @@ public class Validators {
              else if (Character.isLowerCase(ch)) lower = true;
              length ++;
          }
-         if (length < 8) throw new Exception("Password must be a minimum of 8 characters");
-         if (!numeric) throw new Exception("Password must contain at least one number");
-         if (!upper) throw new Exception("Password must contain at least one upper case character");
-         if (!lower) throw new Exception("Password must contain at least one lower case character");
+         if (length < 8) {passexcep = "Password must be a minimum of 8 characters"; return null;}
+         if (!numeric) {passexcep = "Password must contain at least one number"; return null;}
+         if (!upper) { passexcep = "Password must contain at least one upper case character"; return null;}
+         if (!lower) { passexcep = "Password must contain at least one lower case character"; return null;}
          return password;
     }
     public static String attachmentValidator(String attachment) throws Exception{

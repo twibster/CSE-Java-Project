@@ -5,9 +5,11 @@ module controllers{
     requires spring.security.crypto;
 
     opens frontend.controllers to javafx.fxml;
+    opens frontend.controllers.homepage to javafx.fxml;
    // opens frontend.controllers.student to javafx.fxml;
 
     exports frontend.controllers;
+    exports frontend.controllers.homepage;
    // exports frontend.controllers.student to javafx.fxml;
     exports backend;
     exports backend.tests;

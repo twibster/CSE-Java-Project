@@ -10,7 +10,7 @@ public class main extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/frontend/fxml/student_system.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/frontend/fxml/student_system1.fxml"));
             Scene scene = new Scene(root);
             // Uncomment this line and add the application.css file if you want to use a custom CSS
             // scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
