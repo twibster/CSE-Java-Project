@@ -18,7 +18,7 @@ public class Assignment{
     private LocalDateTime deadline;
     private final LocalDateTime created = LocalDateTime.now();
     public Assignment(User creator, String title, String body, String attachment, LocalDateTime deadline) throws Exception {
-        Validators.positionValidator(creator.getPosition(), new Positions[]{Positions.Admin, Positions.Teacher});
+        Validators.positionValidator(creator.getPosition(), new Positions[]{Positions.ADMIN, Positions.TEACHER});
         this.creator = creator;
         this.title = title;
         this.body = body;
@@ -29,7 +29,7 @@ public class Assignment{
         database.add(this);
     }
     public Assignment(User creator, String title, String body, LocalDateTime deadline) throws Exception {
-        Validators.positionValidator(creator.getPosition(), new Positions[]{Positions.Admin, Positions.Teacher});
+        Validators.positionValidator(creator.getPosition(), new Positions[]{Positions.ADMIN, Positions.TEACHER});
         this.id = count;
         this.creator = creator;
         this.title = title;

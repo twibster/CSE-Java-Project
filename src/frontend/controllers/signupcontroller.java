@@ -55,7 +55,7 @@ public class signupcontroller {
     private Positions position;
 
 	private ObservableList<Positions> UserOptions = FXCollections.
-			observableArrayList(Positions.Teacher, Positions.Student);
+			observableArrayList(Positions.TEACHER, Positions.STUDENT);
 
     public ObservableList<Positions> getUserOptions() {
 		return UserOptions;
@@ -87,19 +87,20 @@ public class signupcontroller {
     @FXML
     void signup(ActionEvent event) throws Exception {
     	if (switched) {
-    		position = Positions.Admin;
+    		position = Positions.ADMIN;
     		System.out.println(position);
     	}
     	else {
     	position = roles.getValue();
 		User user = User.initializeChild(txtfname.getText(), txtlname.getText(), txtemail.getText(), txtpassword.getText(), position);
+		User.appendUserToCSV(user);
 		System.out.println(user);
     	}
     }
     
     public void initialize() {
 		// TODO Auto-generated method stub
-		roles.setValue(Positions.Student);
+		roles.setValue(Positions.STUDENT);
 		roles.setItems(getUserOptions());
 
 	}

@@ -35,6 +35,7 @@ public class signin_userController {
         if (user != null){
             if (user.checkPassword(txtpassword.getText())){
                 Utils.redirectScene(this.getClass(),event,"/frontend/fxml/new.fxml", stage, scene);
+                return;
             }
             throw new Exception("Incorrect Password");
         }

@@ -1,9 +1,11 @@
 package backend.users;
 
+import backend.Config;
 import backend.Utils;
 import backend.Positions;
 import backend.Validators;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -16,6 +18,8 @@ public abstract class User {
     private String email;
     private String password;
     Positions position;
+    private int approved = 1;
+
 
     public User(String first_name, String last_name, String email, String password, Positions position) throws Exception {
 
@@ -55,6 +59,10 @@ public abstract class User {
         this.email = Validators.emailValidator(email);
     }
 
+    public String getPassword() {
+        return password;
+    }
+
     public void setPassword(String password) throws Exception {
         this.password = Utils.hash(Validators.passwordValidator(password));
     }
@@ -65,6 +73,15 @@ public abstract class User {
 
     public Positions getPosition() {
         return position;
+    }
+
+    public int getApproved() {
+        return approved;
+    }
+
+    public void setApproved(int approved, User setter) throws Exception {
+        Validators.positionValidator(setter.position, new Positions[]{Positions.ADMIN});
+        this.approved = approved;
     }
 
     // Start of static methods
@@ -82,17 +99,28 @@ public abstract class User {
     }
     public static User initializeChild(String first_name, String last_name, String email, String password, Positions position) throws Exception {
         switch (position) {
-            case Admin -> {
+            case ADMIN -> {
                 return new Admin(first_name, last_name, email, password, position);
             }
-            case Teacher -> {
+            case TEACHER -> {
                 return new Teacher(first_name, last_name, email, password, position);
             }
-            case Student -> {
+            case STUDENT -> {
                 return new Student(first_name, last_name, email, password, position);
             }
         }
         return null;
+    }
+    public static void appendUserToCSV(User user) throws IOException {
+        Utils.writeAppendToCSV(createCSVLine(user), Config.usersCSVPath, true);
+    }
+    public static String createCSVLine(User user){
+        return user.id+ ","+
+                user.getFirst_name()+","+
+                user.getLast_name()+","+
+                user.getEmail()+","+
+                user.getPassword()+","+
+                user.getPosition()+"\n";
     }
     @Override
     public String toString() {

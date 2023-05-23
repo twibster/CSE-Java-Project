@@ -22,6 +22,7 @@ public class Validators {
          throw new Exception("Not a valid email");
     }
     public static String passwordValidator(String password) throws Exception{
+        if (password.matches("\\$2a\\$\\d\\d\\$[./0-9A-Za-z]{53}")) {return password;}
          boolean upper = false, lower = false, numeric = false;
          int length = 0;
          for(char ch: password.toCharArray()){

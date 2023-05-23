@@ -1,5 +1,7 @@
 package frontend.controllers;
 
+import backend.Config;
+import backend.Utils;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -24,7 +26,8 @@ public class main extends Application {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+        Utils.readUserFromCSV(Config.usersCSVPath);
         launch(args);
     }
 }

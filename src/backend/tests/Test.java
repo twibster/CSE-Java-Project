@@ -1,21 +1,28 @@
 package backend.tests;
 
+import backend.Config;
 import backend.Positions;
+import backend.Utils;
 import backend.users.Admin;
 import backend.users.Student;
 import backend.users.User;
 import backend.functionality.Assignment;
 
 
+import java.io.File;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class Test{
 
     public static void main(String[] args) throws Exception {
+
         User user = UserTest.addUser();
         UserTest.emailExists();
         AssignmentTest.addAssignment(user);
+        CSVTest.testCSVRead();
+        CSVTest.testClearCSV();
     }
 
 }
@@ -28,18 +35,18 @@ class UserTest{
                 "Doe",
                 email,
                 password,
-                Positions.Teacher);
+                Positions.TEACHER);
         System.out.println("1- Add User Passed!");
         return admin;
     }
-    public static void emailExists() throws Exception{
+    public static void emailExists() {
         try {
             Student user = new Student(
                     "Omar",
                     "Omran",
                     email,
                     password,
-                    Positions.Student);
+                    Positions.STUDENT);
         } catch (Exception e) {
             if (Objects.equals(e.getMessage(), "Email is already in use")) {
                 System.out.println("2- Existence Passed!");
@@ -49,7 +56,26 @@ class UserTest{
         System.out.println("2- Failed!");
     }
 }
+class CSVTest{
 
+    public static void testCSVRead(){
+        try {
+            Utils.readUserFromCSV(Config.usersCSVPath);
+        } catch (Exception e) {
+            if (Objects.equals(e.getMessage(), "Email is already in use")) {
+                System.out.println("4- CSV Write Pass!");
+                System.out.println("5- CSV Read Pass!");
+                return;
+            }
+        }
+        System.out.println("4- Failed!");
+        System.out.println("5- Failed!");
+    }
+    public static void testClearCSV() throws Exception {
+        Utils.clearCSV(Config.usersCSVPath);
+        Utils.readUserFromCSV(Config.usersCSVPath);
+    }
+}
 class AssignmentTest{
     public static Assignment addAssignment(User user) throws Exception {
         Assignment assignment = new Assignment(
