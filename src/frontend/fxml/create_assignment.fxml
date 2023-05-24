@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<!-- Change the controller package and name -->
+<AnchorPane prefHeight="510.0" prefWidth="612.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontend.controllers.create_assignment">
+   <children>
+      <Pane prefHeight="601.0" prefWidth="704.0">
+         <children>
+            <!-- Add fx:id attribute to the text fields -->
+            <TextField fx:id="nameField" layoutX="317.0" layoutY="191.0" promptText="NAME" />
+            <TextField fx:id="titleField" layoutX="317.0" layoutY="240.0" promptText="TITLE" />
+            <TextField fx:id="bodyField" layoutX="317.0" layoutY="288.0" promptText="BODY" />
+            <TextField fx:id="attachmentField" layoutX="317.0" layoutY="333.0" promptText="ATTACHMENT" />
+            <TextField fx:id="deadlineField" layoutX="317.0" layoutY="378.0" promptText="DEADLINE" />
+
+            <!-- Add onAction attribute to the button -->
+            <Button layoutX="317.0" layoutY="455.0" mnemonicParsing="false" text="Create Assignment" onAction="#handleCreateAssignment">
+               <font>
+                  <Font size="38.0" />
+               </font>
+            </Button>
+
+            <Label layoutX="175.0" layoutY="232.0" text="Title">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="175.0" layoutY="282.0" text="Body">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="175.0" layoutY="325.0" text="Attachment">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="175.0" layoutY="383.0" text="Deadline">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="171.0" layoutY="189.0" text="Name">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <Blend />
+         </effect>
+      </Pane>
+   </children>
+</AnchorPane>

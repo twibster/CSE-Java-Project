@@ -9,10 +9,11 @@ public class Admin extends User {
     public Admin(String first_name, String last_name, String email, String password, Positions position) throws Exception {
         super(first_name, last_name, email, password, position);
     }
-    public Assignment createAssignment(String title, String body, String attachment, LocalDateTime deadline) throws Exception {
+    /*public Assignment createAssignment(String title, String body, String attachment, LocalDateTime deadline) throws Exception {
         return new Assignment(this, title, body, attachment, deadline);
     }
     public Assignment createAssignment(String title, String body, LocalDateTime deadline) throws Exception {
         return new Assignment(this, title, body, deadline);
     }
+     */
 }

@@ -3,6 +3,7 @@ module controllers{
     requires javafx.fxml;
     requires spring.security.core;
     requires spring.security.crypto;
+    requires com.google.gson;
 
     opens frontend.controllers to javafx.fxml;
    // opens frontend.controllers.student to javafx.fxml;

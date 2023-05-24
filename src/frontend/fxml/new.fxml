@@ -3,6 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -65,7 +67,7 @@
                                 <Insets top="10.0" />
                             </VBox.margin>
                             <children>
-                                <Label layoutX="50.0" layoutY="29.0" prefHeight="36.0" prefWidth="183.0" text="contact us" textFill="WHITE">
+                                <Label fx:id="contactUsLabel" layoutX="50.0" layoutY="29.0" prefHeight="36.0" prefWidth="183.0" text="contact us" textFill="WHITE">
                                     <font>
                                         <Font name="Bell MT" size="29.0" />
                                     </font>
@@ -108,9 +110,34 @@
                                 <Insets />
                             </HBox.margin>
                         </Label>
+                  <Label text="Welcome ">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Label>
+                        <Label fx:id="nameLabel" text="NAME ">
+                            <font>
+                                <Font size="48.0" />
+                            </font>
+                        </Label>
+                  <Label text="!">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Label>
                     </children>
                 </HBox>
             </top>
+         <center>
+             <TableView fx:id="assignmentTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                 <columns>
+                     <TableColumn fx:id="titleColumn" prefWidth="144.79997861385345" text="Title" />
+                     <TableColumn fx:id="bodyColumn" prefWidth="146.39996337890625" text="Body" />
+                     <TableColumn fx:id="attachmentColumn" prefWidth="144.0" text="Attachment" />
+                     <TableColumn fx:id="deadlineColumn" prefWidth="200.80001831054688" text="Deadline" />
+                 </columns>
+             </TableView>
+         </center>
         </BorderPane>
     </children>
 </AnchorPane>
