@@ -15,6 +15,7 @@ public abstract class User {
     private String last_name;
     private String email;
     private String password;
+    public static String emailexcep;
     Positions position;
 
     public User(String first_name, String last_name, String email, String password, Positions position) throws Exception {
@@ -50,7 +51,7 @@ public abstract class User {
 
     public void setEmail(String email) throws Exception {
         if (fetchByEmail(email) != null){
-            throw new Exception("Email is already in use");
+            emailexcep = "Email is already in use";
         }
         this.email = Validators.emailValidator(email);
     }
