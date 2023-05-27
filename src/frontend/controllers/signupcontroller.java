@@ -2,7 +2,7 @@ package frontend.controllers;
 
 import java.io.IOException;
 
-import backend.Positions;
+import backend.constants.Positions;
 import backend.users.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -93,8 +93,8 @@ public class signupcontroller {
     	else {
     	position = roles.getValue();
 		User user = User.initializeChild(txtfname.getText(), txtlname.getText(), txtemail.getText(), txtpassword.getText(), position, false);
-		User.appendUserToCSV(user);
 		System.out.println(user);
+		Utils.redirectScene(this.getClass(),event,"/frontend/fxml/signin_user.fxml", stage, scene);
     	}
     }
     
