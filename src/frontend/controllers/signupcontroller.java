@@ -92,7 +92,7 @@ public class signupcontroller {
     	}
     	else {
     	position = roles.getValue();
-		User user = User.initializeChild(txtfname.getText(), txtlname.getText(), txtemail.getText(), txtpassword.getText(), position);
+		User user = User.initializeChild(txtfname.getText(), txtlname.getText(), txtemail.getText(), txtpassword.getText(), position, false);
 		User.appendUserToCSV(user);
 		System.out.println(user);
     	}

@@ -8,9 +8,6 @@ import backend.users.Student;
 import backend.users.User;
 import backend.functionality.Assignment;
 
-
-import java.io.File;
-import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -35,7 +32,8 @@ class UserTest{
                 "Doe",
                 email,
                 password,
-                Positions.TEACHER);
+                Positions.TEACHER,
+                false);
         System.out.println("1- Add User Passed!");
         return admin;
     }
@@ -46,7 +44,8 @@ class UserTest{
                     "Omran",
                     email,
                     password,
-                    Positions.STUDENT);
+                    Positions.STUDENT,
+                    false);
         } catch (Exception e) {
             if (Objects.equals(e.getMessage(), "Email is already in use")) {
                 System.out.println("2- Existence Passed!");

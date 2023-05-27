@@ -32,7 +32,7 @@ public class Utils {
             String line;
             while ((line = csvReader.readLine()) != null) {
                 String[] user = line.split(",");
-                User.initializeChild(user[1],user[2],user[3],user[4],Positions.fromValue(user[5]));
+                User.initializeChild(user[1],user[2],user[3],user[4],Positions.fromValue(user[5]), true);
             }
             csvReader.close();
         } catch (Exception e) {

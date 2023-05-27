@@ -21,12 +21,17 @@ public abstract class User {
     private int approved = 1;
 
 
-    public User(String first_name, String last_name, String email, String password, Positions position) throws Exception {
+    public User(String first_name, String last_name, String email, String password, Positions position, boolean csv) throws Exception {
 
         this.setFirst_name(first_name);
         this.setLast_name(last_name);
         this.setEmail(email);
-        this.setPassword(password);
+        if (csv){
+            this.password = password;
+        }
+        else {
+            this.setPassword(password);
+        }
         this.position = position;
 
         this.id = count++;
@@ -97,16 +102,16 @@ public abstract class User {
         }
         return null;
     }
-    public static User initializeChild(String first_name, String last_name, String email, String password, Positions position) throws Exception {
+    public static User initializeChild(String first_name, String last_name, String email, String password, Positions position, boolean csv) throws Exception {
         switch (position) {
             case ADMIN -> {
-                return new Admin(first_name, last_name, email, password, position);
+                return new Admin(first_name, last_name, email, password, position, csv);
             }
             case TEACHER -> {
-                return new Teacher(first_name, last_name, email, password, position);
+                return new Teacher(first_name, last_name, email, password, position, csv);
             }
             case STUDENT -> {
-                return new Student(first_name, last_name, email, password, position);
+                return new Student(first_name, last_name, email, password, position, csv);
             }
         }
         return null;
