@@ -1,6 +1,6 @@
 package backend.users;
 
-import backend.Positions;
+import backend.constants.Positions;
 
 public class Teacher extends Admin {
     private int approved=0;

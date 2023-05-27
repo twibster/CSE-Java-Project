@@ -13,4 +13,5 @@ module controllers{
     exports backend.tests;
     exports backend.users;
     exports backend.functionality;
+    exports backend.constants;
 }

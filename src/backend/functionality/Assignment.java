@@ -1,6 +1,6 @@
 package backend.functionality;
 
-import backend.Positions;
+import backend.constants.Positions;
 import backend.Validators;
 import backend.users.User;
 

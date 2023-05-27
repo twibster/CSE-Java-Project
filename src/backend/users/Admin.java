@@ -1,6 +1,6 @@
 package backend.users;
 
-import backend.Positions;
+import backend.constants.Positions;
 import backend.functionality.Assignment;
 
 import java.time.LocalDateTime;

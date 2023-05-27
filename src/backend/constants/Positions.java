@@ -1,4 +1,4 @@
-package backend;
+package backend.constants;
 
 public enum Positions{
     ADMIN("Admin"),
@@ -13,9 +13,9 @@ public enum Positions{
         return value;
     }
     public static Positions fromValue(String value) {
-        for (Positions day : Positions.values()) {
-            if (day.getValue().equalsIgnoreCase(value)) {
-                return day;
+        for (Positions position : Positions.values()) {
+            if (position.getValue().equalsIgnoreCase(value)) {
+                return position;
             }
         }
         throw new IllegalArgumentException("Invalid Position value: " + value);

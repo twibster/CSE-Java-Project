@@ -1,5 +1,7 @@
 package backend;
 
+import backend.constants.Positions;
+
 import java.time.LocalDateTime;
 
 public class Validators {

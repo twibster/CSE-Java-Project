@@ -2,7 +2,7 @@ package backend.users;
 
 import backend.Config;
 import backend.Utils;
-import backend.Positions;
+import backend.constants.Positions;
 import backend.Validators;
 
 import java.io.IOException;
