@@ -16,28 +16,29 @@ public class Assignment{
     private String body;
     private String attachment=null;
     private LocalDateTime deadline;
-    private final LocalDateTime created = LocalDateTime.now();
+    final LocalDateTime created = LocalDateTime.now();
     public Assignment(User creator, String title, String body, String attachment, LocalDateTime deadline) throws Exception {
-        Validators.positionValidator(creator.getPosition(), new Positions[]{Positions.ADMIN, Positions.TEACHER});
-        this.creator = creator;
-        this.title = title;
-        this.body = body;
-        this.attachment = attachment;
-        this.deadline = deadline;
+        this.creator = this.setCreator(creator);
+        setTitle(title);
+        setBody(body);
+        setAttachment(attachment);
+        setDeadline(deadline);
 
         this.id = count++;
         database.add(this);
     }
     public Assignment(User creator, String title, String body, LocalDateTime deadline) throws Exception {
-        Validators.positionValidator(creator.getPosition(), new Positions[]{Positions.ADMIN, Positions.TEACHER});
-        this.id = count;
-        this.creator = creator;
-        this.title = title;
-        this.body = body;
-        this.deadline = deadline;
+        this.creator = this.setCreator(creator);
+        setTitle(title);
+        setBody(body);
+        setDeadline(deadline);
 
+        this.id = count++;
         database.add(this);
-        count++;
+    }
+    private User setCreator(User creator) throws Exception {
+        Validators.positionValidator(creator.getPosition(), new Positions[]{Positions.ADMIN, Positions.TEACHER});
+        return creator;
     }
 
     public String getTitle() {
@@ -64,11 +65,12 @@ public class Assignment{
         this.attachment = Validators.attachmentValidator(attachment);
     }
 
+    public LocalDateTime getDeadline() {
+        return deadline;
+    }
+
     public void setDeadline(LocalDateTime deadline) throws Exception {
         this.deadline = Validators.deadlineValidator(deadline);
-    }
-    public LocalDateTime getCreated() {
-        return created;
     }
 
     public void deleteAssignment(Assignment assignment){
