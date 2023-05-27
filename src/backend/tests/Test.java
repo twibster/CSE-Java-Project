@@ -1,8 +1,10 @@
 package backend.tests;
 
 import backend.Config;
-import backend.Positions;
-import backend.Utils;
+import backend.constants.MeetingType;
+import backend.constants.Positions;
+import backend.database.CRUD;
+import backend.functionality.Meeting;
 import backend.users.Admin;
 import backend.users.Student;
 import backend.users.User;
@@ -12,20 +14,19 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class Test{
+    public static String email = "omar.omran@ieee-zsb.org";
+    public static String password = "Test1234";
 
     public static void main(String[] args) throws Exception {
 
-        User user = UserTest.addUser();
-        UserTest.emailExists();
-        AssignmentTest.addAssignment(user);
-        CSVTest.testCSVRead();
-        CSVTest.testClearCSV();
+        User user = addUser();
+        emailExists();
+        addAssignment(user);
+        addMeeting(user);
+        testCSVRead();
+        testClearCSV();
     }
 
-}
-class UserTest{
-    public static String email = "omar.omran@ieee-zsb.org";
-    public static String password = "Test1234";
     public static User addUser() throws Exception {
         Admin admin = new Admin(
                 "John",
@@ -34,7 +35,7 @@ class UserTest{
                 password,
                 Positions.TEACHER,
                 false);
-        System.out.println("1- Add User Passed!");
+        System.out.println("Add User Passed!");
         return admin;
     }
     public static void emailExists() {
@@ -48,34 +49,12 @@ class UserTest{
                     false);
         } catch (Exception e) {
             if (Objects.equals(e.getMessage(), "Email is already in use")) {
-                System.out.println("2- Existence Passed!");
+                System.out.println("Existence Passed!");
                 return;
             }
         }
-        System.out.println("2- Failed!");
+        System.out.println("Email Existence Failed!");
     }
-}
-class CSVTest{
-
-    public static void testCSVRead(){
-        try {
-            Utils.readUserFromCSV(Config.usersCSVPath);
-        } catch (Exception e) {
-            if (Objects.equals(e.getMessage(), "Email is already in use")) {
-                System.out.println("4- CSV Write Pass!");
-                System.out.println("5- CSV Read Pass!");
-                return;
-            }
-        }
-        System.out.println("4- Failed!");
-        System.out.println("5- Failed!");
-    }
-    public static void testClearCSV() throws Exception {
-        Utils.clearCSV(Config.usersCSVPath);
-        Utils.readUserFromCSV(Config.usersCSVPath);
-    }
-}
-class AssignmentTest{
     public static Assignment addAssignment(User user) throws Exception {
         Assignment assignment = new Assignment(
                 user,
@@ -83,7 +62,37 @@ class AssignmentTest{
                 "This is an actual assignment, stay tudent lol",
                 LocalDateTime.of(2024,02,12,4,40)
         );
-        System.out.println("3- Add Assignment Passed!");
+        System.out.println("Add Assignment Passed!");
         return assignment;
+    }
+
+
+    public static Meeting addMeeting(User user) throws Exception {
+        Meeting meeting = new Meeting(
+                user,
+                "First ever meeting",
+                MeetingType.ONLINE,
+                "www.testing.com",
+                LocalDateTime.of(2024,02,12,4,40)
+        );
+        System.out.println("Add Meeting Passed!");
+        return meeting;
+    }
+    public static void testCSVRead(){
+        try {
+            CRUD.readUserFromCSV(Config.usersCSVPath);
+        } catch (Exception e) {
+            if (Objects.equals(e.getMessage(), "Email is already in use")) {
+                System.out.println("CSV Write Pass!");
+                System.out.println("CSV Read Pass!");
+                return;
+            }
+        }
+        System.out.println("CSV Write Failed!");
+        System.out.println("CSV Read Failed!");
+    }
+    public static void testClearCSV() throws Exception {
+        CRUD.clearCSV(Config.usersCSVPath);
+        CRUD.readUserFromCSV(Config.usersCSVPath);
     }
 }

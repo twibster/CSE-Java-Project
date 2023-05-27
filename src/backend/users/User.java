@@ -4,6 +4,7 @@ import backend.Config;
 import backend.Utils;
 import backend.constants.Positions;
 import backend.Validators;
+import backend.database.CRUD;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,7 +20,6 @@ public abstract class User {
     private String password;
     Positions position;
     private int approved = 1;
-
 
     public User(String first_name, String last_name, String email, String password, Positions position, boolean csv) throws Exception {
 
@@ -120,7 +120,7 @@ public abstract class User {
         return null;
     }
     public static void appendUserToCSV(User user) throws IOException {
-        Utils.writeAppendToCSV(createCSVLine(user), Config.usersCSVPath, true);
+        CRUD.add(createCSVLine(user), Config.usersCSVPath, true);
     }
     public static String createCSVLine(User user){
         return user.id+ ","+
