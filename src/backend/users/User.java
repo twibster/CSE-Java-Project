@@ -36,6 +36,9 @@ public abstract class User {
 
         this.id = count++;
         database.add(this);
+        if (!csv){
+            User.appendUserToCSV(this);
+        }
     }
     public String getFirst_name(){
         return first_name;
