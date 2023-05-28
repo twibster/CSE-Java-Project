@@ -8,6 +8,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+
 //
 public class Main extends Application {
     @Override
@@ -17,6 +19,22 @@ public class Main extends Application {
             Scene scene = new Scene(root);
 
             primaryStage.setTitle("Student System");
+            primaryStage.initStyle(StageStyle.UNDECORATED);
+            // Add final variables to capture initial cursor coordinates
+            final double[] xOffset = {0};
+            final double[] yOffset = {0};
+
+// Add mouse event handlers to enable window dragging
+            scene.setOnMousePressed(event -> {
+                xOffset[0] = event.getSceneX();
+                yOffset[0] = event.getSceneY();
+            });
+
+            scene.setOnMouseDragged(event -> {
+                primaryStage.setX(event.getScreenX() - xOffset[0]);
+                primaryStage.setY(event.getScreenY() - yOffset[0]);
+            });
+
             primaryStage.setScene(scene);
             primaryStage.show();
             primaryStage.setResizable(false);
