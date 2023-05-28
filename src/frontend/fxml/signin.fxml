@@ -12,49 +12,25 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="530.0" minWidth="650.0" prefHeight="530.0" prefWidth="650.0" style="-fx-background-color: #1D3557;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontend.controllers.Signin">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="530.0" minWidth="650.0" prefHeight="530.0" prefWidth="650.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontend.controllers.Signin">
    <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="215.0" style="-fx-background-color: #457B9D;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="-2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="218.0" style="-fx-background-color: #2262C6; -fx-background-radius: 0 30 30 0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-2.0" AnchorPane.topAnchor="0.0">
          <children>
             <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="55.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icons/icons8_triller_app_64px_1.png" />
+                  <Image url="@../icons/icons8_ios_photos_96px.png" />
                </image>
             </ImageView>
             <Pane layoutX="12.0" layoutY="226.0" prefHeight="66.0" prefWidth="191.0" />
-            <Label layoutX="20.0" layoutY="181.0" text="S.M.System">
+            <Label layoutX="21.0" layoutY="157.0" text="ALU School" textFill="WHITE">
                <font>
                   <Font size="35.0" />
                </font>
-               <textFill>
-                  <LinearGradient endX="0.9393939249443285" endY="0.6590908946412982">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.658823549747467" green="0.8549019694328308" blue="0.8627451062202454" />
-                           </color>
-                        </Stop>
-                        <Stop offset="0.5024390243902438">
-                           <color>
-                              <Color red="0.5518518686294556" green="0.9029012322425842" blue="1.0" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="0.6627451181411743" green="0.8549019694328308" blue="0.8588235378265381" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </textFill>
             </Label>
-            <Button accessibleText="Login" layoutX="55.0" layoutY="241.0" mnemonicParsing="false" onAction="#systemexit" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #2F2B43; -fx-background-radius: 20;" text="Exit" textFill="#a8dadc">
+            <Button accessibleText="Login" layoutX="58.0" layoutY="353.0" mnemonicParsing="false" onAction="#systemexit" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #FFF; -fx-background-radius: 20;" text="Exit">
                <effect>
                   <Blend />
                </effect>
@@ -81,58 +57,16 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="410.0" layoutY="86.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="215.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="410.0" layoutY="86.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="215.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label layoutX="102.0" layoutY="35.0" text="Welcome, User">
+            <Label layoutX="102.0" layoutY="35.0" text="Welcome, User" textFill="#2262c6">
                <font>
                   <Font size="35.0" />
                </font>
-               <textFill>
-                  <LinearGradient endX="0.9393939249443285" endY="0.6590908946412982">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.658823549747467" green="0.8549019694328308" blue="0.8627451062202454" />
-                           </color>
-                        </Stop>
-                        <Stop offset="0.5024390243902438">
-                           <color>
-                              <Color red="0.5518518686294556" green="0.9029012322425842" blue="1.0" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="0.6627451181411743" green="0.8549019694328308" blue="0.8588235378265381" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </textFill>
             </Label>
             <VBox layoutX="168.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="265.0" prefWidth="405.0" spacing="10.0" style="-fx-background-radius: 10; -fx-border-radius: 15;" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email" textAlignment="CENTER">
-                     <fill>
-                        <LinearGradient endX="1.0" endY="0.3977272600838632" startX="0.45833338390697137" startY="1.0">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color red="0.658823549747467" green="0.8549019694328308" blue="0.8627451062202454" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="0.526829268292683">
-                                 <color>
-                                    <Color red="0.6621999740600586" green="0.8534066677093506" blue="0.8600000143051147" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color red="0.9450980424880981" green="0.9803921580314636" blue="0.9333333373069763" />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </LinearGradient>
-                     </fill>
+                  <Text fill="#2262c6" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" textAlignment="CENTER">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -140,7 +74,7 @@
                         <Insets left="58.0" top="10.0" />
                      </VBox.margin>
                   </Text>
-                  <TextField fx:id="txtemail" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" promptText="Enter Your Email adress" style="-fx-background-color: #2F2B43; -fx-background-radius: 30; -fx-text-inner-color: #C6C6C6;">
+                  <TextField fx:id="txtemail" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" promptText="Enter Your Email adress" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
                      <VBox.margin>
                         <Insets left="48.0" top="-4.0" />
                      </VBox.margin>
@@ -150,28 +84,7 @@
                         <Insets left="55.0" top="-5.0" />
                      </VBox.margin>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Password" textAlignment="CENTER">
-                     <fill>
-                        <LinearGradient endX="1.0" endY="0.3977272600838632" startX="0.45833338390697137" startY="1.0">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color red="0.658823549747467" green="0.8549019694328308" blue="0.8627451062202454" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="0.526829268292683">
-                                 <color>
-                                    <Color red="0.6621999740600586" green="0.8534066677093506" blue="0.8600000143051147" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color red="0.9450980424880981" green="0.9803921580314636" blue="0.9333333373069763" />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </LinearGradient>
-                     </fill>
+                  <Text fill="#2262c6" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" textAlignment="CENTER">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -179,7 +92,7 @@
                         <Insets left="58.0" top="-4.0" />
                      </VBox.margin>
                   </Text>
-                  <PasswordField fx:id="txtpassword" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" promptText="Enter Your Password" style="-fx-background-color: #2F2B43; -fx-background-radius: 30; -fx-text-inner-color: #C6C6C6;">
+                  <PasswordField fx:id="txtpassword" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" promptText="Enter Your Password" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
                      <VBox.margin>
                         <Insets left="48.0" top="-4.0" />
                      </VBox.margin>
@@ -189,7 +102,7 @@
                         <Insets left="55.0" top="-5.0" />
                      </VBox.margin>
                   </Text>
-                  <Button accessibleText="Login" mnemonicParsing="false" onAction="#studentsigninclick" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #2F2B43; -fx-background-radius: 20;" text="Sign-in" textFill="#a8dadc">
+                  <Button accessibleText="Login" mnemonicParsing="false" onAction="#studentsigninclick" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #2262C6; -fx-background-radius: 20;" text="Sign-in" textFill="WHITE">
                      <effect>
                         <Blend />
                      </effect>
@@ -202,27 +115,6 @@
             <VBox layoutX="175.0" layoutY="374.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="81.0" prefWidth="405.0" spacing="15.0" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account?" textAlignment="CENTER">
-                     <fill>
-                        <LinearGradient endX="1.0" endY="0.3977272600838632" startX="0.45833338390697137" startY="1.0">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color red="0.658823549747467" green="0.8549019694328308" blue="0.8627451062202454" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="0.526829268292683">
-                                 <color>
-                                    <Color red="0.6621999740600586" green="0.8534066677093506" blue="0.8600000143051147" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color red="0.9450980424880981" green="0.9803921580314636" blue="0.9333333373069763" />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </LinearGradient>
-                     </fill>
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -231,27 +123,6 @@
                      </VBox.margin>
                   </Text>
                   <Text onMouseClicked="#signup" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign up here" textAlignment="CENTER">
-                     <fill>
-                        <LinearGradient endX="1.0" endY="0.3977272600838632" startX="0.45833338390697137" startY="1.0">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color red="0.658823549747467" green="0.8549019694328308" blue="0.8627451062202454" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="0.526829268292683">
-                                 <color>
-                                    <Color red="0.6621999740600586" green="0.8534066677093506" blue="0.8600000143051147" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color red="0.9450980424880981" green="0.9803921580314636" blue="0.9333333373069763" />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </LinearGradient>
-                     </fill>
                      <font>
                         <Font size="15.0" />
                      </font>
