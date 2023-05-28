@@ -154,21 +154,19 @@ public class signupcontroller {
 			emailerror.setText(null);
 			emailerror.setVisible(false);
 			errors = false;
-		}
-
-		try{
-			Validators.emailValidator(txtemail.getText());
-			emailerror.setText("");
-			emailerror.setVisible(false);
-			errors = false;
-		}catch (Exception e){
-			if (e instanceof IOException) {
-				emailerror.setText("Not a valid email");
-				emailerror.setVisible(true);
-				errors = true;
+			try{
+				Validators.emailValidator(txtemail.getText());
+				emailerror.setText("");
+				emailerror.setVisible(false);
+				errors = false;
+			}catch (Exception e){
+				if (e instanceof IOException) {
+					emailerror.setText("Not a valid email");
+					emailerror.setVisible(true);
+					errors = true;
+				}
 			}
 		}
-
 		try{
 			Validators.passwordValidator(txtpassword.getText());
 			passerror.setText("");

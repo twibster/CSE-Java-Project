@@ -7,8 +7,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
@@ -19,20 +17,20 @@
 
 <AnchorPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="530.0" prefWidth="650.0" style="-fx-background-color: #457B9D;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontend.controllers.signupcontroller">
    <children>
-      <VBox fx:id="vbox" focusTraversable="true" layoutX="150.0" layoutY="73.0" prefHeight="350.0" prefWidth="350.0" spacing="20.0" style="-fx-background-color: #F1FAEE; -fx-background-radius: 15;">
+      <VBox fx:id="vbox" focusTraversable="true" layoutX="150.0" layoutY="72.0" minHeight="-Infinity" prefHeight="358.0" prefWidth="350.0" spacing="20.0" style="-fx-background-color: #F1FAEE; -fx-background-radius: 15;">
          <children>
             <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="350.0">
                <children>
-                  <TextField fx:id="txtfname" layoutX="50.0" layoutY="15.0" prefHeight="20.0" prefWidth="250.0" promptText="First Name" style="-fx-background-radius: 20; -fx-background-color: #A8DADC;" AnchorPane.topAnchor="15.0" />
-                  <Text layoutX="52.0" layoutY="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  First Name" />
-                  <Text fx:id="fnameerror" fill="#ae0303" layoutX="56.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter a valid Name" textAlignment="RIGHT" visible="false" />
+                  <TextField fx:id="txtfname" layoutX="50.0" layoutY="24.0" prefHeight="20.0" prefWidth="250.0" promptText="First Name" style="-fx-background-radius: 20; -fx-background-color: #A8DADC;" AnchorPane.topAnchor="24.0" />
+                  <Text layoutX="52.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  First Name" />
+                  <Text fx:id="fnameerror" fill="#ae0303" layoutX="56.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter a valid Name" textAlignment="RIGHT" visible="false" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="81.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="350.0">
                <children>
-                  <TextField fx:id="txtlname" layoutX="50.0" layoutY="15.0" prefHeight="20.0" prefWidth="250.0" promptText="Last Name" style="-fx-background-radius: 20; -fx-background-color: #A8DADC;" AnchorPane.topAnchor="15.0" />
-                  <Text layoutX="52.0" layoutY="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Last Name" />
-                  <Text fx:id="lnameerror" fill="#ae0303" layoutX="57.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter a valid Name " textAlignment="RIGHT" visible="false" />
+                  <TextField fx:id="txtlname" layoutX="50.0" layoutY="15.0" prefHeight="20.0" prefWidth="250.0" promptText="Last Name" style="-fx-background-radius: 20; -fx-background-color: #A8DADC;" AnchorPane.topAnchor="24.0" />
+                  <Text layoutX="52.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Last Name" />
+                  <Text fx:id="lnameerror" fill="#ae0303" layoutX="57.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter a valid Name " textAlignment="RIGHT" visible="false" />
                </children>
                <VBox.margin>
                   <Insets top="5.0" />
@@ -40,9 +38,9 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="81.0" prefHeight="40.0" prefWidth="200.0">
                <children>
-                  <TextField fx:id="txtemail" layoutX="50.0" layoutY="14.0" prefHeight="20.0" prefWidth="250.0" promptText="Example@gmail.com" style="-fx-background-radius: 20; -fx-background-color: #A8DADC;" AnchorPane.topAnchor="14.0" />
-                  <Text layoutX="52.0" layoutY="4.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  Email" />
-                  <Text fx:id="emailerror" fill="#ae0303" layoutX="53.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter a valid Email" textAlignment="RIGHT" visible="false" />
+                  <TextField fx:id="txtemail" layoutX="50.0" layoutY="27.0" prefHeight="20.0" prefWidth="250.0" promptText="Example@gmail.com" style="-fx-background-radius: 20; -fx-background-color: #A8DADC;" AnchorPane.topAnchor="27.0" />
+                  <Text layoutX="50.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  Email" />
+                  <Text fx:id="emailerror" fill="#ae0303" layoutX="58.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter a valid Email" textAlignment="RIGHT" visible="false" />
                </children>
                <VBox.margin>
                   <Insets top="5.0" />
@@ -50,25 +48,15 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="65.0" prefHeight="40.0" prefWidth="194.0">
                <children>
-                  <Text layoutX="52.0" layoutY="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
-                  <PasswordField fx:id="txtpassword" layoutX="50.0" layoutY="16.0" minWidth="250.0" prefHeight="26.0" prefWidth="250.0" promptText="Enter Your Password" style="-fx-background-color: #A8DADC; -fx-background-radius: 20;" />
-                  <Text fx:id="passerror" fill="#ae0303" layoutX="52.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter a valid Password" visible="false" wrappingWidth="250.0" />
+                  <Text layoutX="55.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+                  <PasswordField fx:id="txtpassword" layoutX="50.0" layoutY="24.0" minWidth="250.0" prefHeight="26.0" prefWidth="250.0" promptText="Enter Your Password" style="-fx-background-color: #A8DADC; -fx-background-radius: 20;" />
+                  <Text fx:id="passerror" fill="#ae0303" layoutX="59.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter a valid Password" visible="false" wrappingWidth="250.0" />
                </children>
                <VBox.margin>
                   <Insets top="-13.0" />
                </VBox.margin>
             </AnchorPane>
-            <AnchorPane fx:id="adminkey" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="350.0" visible="false">
-               <children>
-                  <Text layoutX="52.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Key" />
-                  <PasswordField fx:id="txtadminkey" layoutX="52.0" layoutY="20.0" minWidth="250.0" prefHeight="26.0" prefWidth="250.0" promptText="Enter Your Admin KEY" style="-fx-background-color: #A8DADC; -fx-background-radius: 20;" />
-                  <Text fx:id="adminkeyerror" fill="#ae0303" layoutX="52.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter a valid KEY" textAlignment="RIGHT" visible="false" />
-               </children>
-               <VBox.margin>
-                  <Insets top="-10.0" />
-               </VBox.margin>
-            </AnchorPane>
-            <AnchorPane fx:id="rolepane" layoutY="50.0" prefHeight="26.0" prefWidth="350.0">
+            <AnchorPane fx:id="rolepane" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="350.0">
                <children>
                   <ComboBox fx:id="roles" layoutX="163.0" prefHeight="26.0" prefWidth="136.0" promptText="Choose your Role" style="-fx-background-color: #A8DADC; -fx-background-radius: 165;" visibleRowCount="2" />
                   <Text layoutX="52.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Your Role :">
@@ -81,17 +69,22 @@
                   <Insets bottom="8.0" />
                </VBox.margin>
             </AnchorPane>
+            <AnchorPane fx:id="adminkey" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="350.0" visible="false">
+               <children>
+                  <Text layoutX="52.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Key" />
+                  <PasswordField fx:id="txtadminkey" layoutX="52.0" layoutY="20.0" minWidth="250.0" prefHeight="26.0" prefWidth="250.0" promptText="Enter Your Admin KEY" style="-fx-background-color: #A8DADC; -fx-background-radius: 20;" />
+                  <Text fx:id="adminkeyerror" fill="#ae0303" layoutX="52.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter a valid KEY" textAlignment="RIGHT" visible="false" />
+               </children>
+               <VBox.margin>
+                  <Insets top="-10.0" />
+               </VBox.margin>
+            </AnchorPane>
          </children>
          <padding>
             <Insets top="15.0" />
          </padding>
       </VBox>
-      <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="24.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../frontend/icons/icons8_triller_app_64px_1.png" />
-         </image>
-      </ImageView>
-      <Text fx:id="txtsignup" boundsType="VISUAL" layoutX="253.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Sign-up" textAlignment="CENTER" AnchorPane.leftAnchor="254.62353515625">
+      <Text fx:id="txtsignup" boundsType="VISUAL" layoutX="238.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Sign-up" textAlignment="CENTER" AnchorPane.leftAnchor="239.62353515625">
          <fill>
             <LinearGradient endX="0.8977273522001324" startX="0.7992423935370012" startY="0.6931818254066235">
                <stops>
@@ -112,13 +105,8 @@
             <Font name="AGA Arabesque" size="25.0" />
          </font>
       </Text>
-      <Button fx:id="btnreturn" layoutX="160.0" layoutY="480.0" minHeight="30.0" minWidth="150.0" mnemonicParsing="false" onAction="#returnToMainPage" style="-fx-background-color: #1D3557; -fx-background-radius: 30; -fx-text-fill: #E7FBFF;" text="Return to main page" />
-      <Text fx:id="signupswitch" fill="WHITE" layoutX="234.0" layoutY="469.0" onMouseClicked="#adminsignup" strokeType="OUTSIDE" strokeWidth="0.0" text="Click here to sign-up as an admin">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Text>
-      <Button fx:id="btnsignup" layoutX="339.0" layoutY="480.0" minHeight="30.0" minWidth="150.0" mnemonicParsing="false" onAction="#signup" style="-fx-background-color: #1D3557; -fx-background-radius: 30; -fx-text-fill: #E7FBFF;" text="Sign-up" />
+      <Button fx:id="btnreturn" layoutX="164.0" layoutY="455.0" minHeight="30.0" minWidth="150.0" mnemonicParsing="false" onAction="#returnToMainPage" style="-fx-background-color: #1D3557; -fx-background-radius: 30; -fx-text-fill: #E7FBFF;" text="Return to main page" />
+      <Button fx:id="btnsignup" layoutX="339.0" layoutY="455.0" minHeight="30.0" minWidth="150.0" mnemonicParsing="false" onAction="#signup" style="-fx-background-color: #1D3557; -fx-background-radius: 30; -fx-text-fill: #E7FBFF;" text="Sign-up" />
       <AnchorPane fx:id="registeredpane" layoutX="42.0" layoutY="150.0" prefHeight="200.0" prefWidth="574.0" style="-fx-background-color: #1D3557; -fx-background-radius: 30;" visible="false" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="200.0">
          <children>
             <Button layoutX="95.0" layoutY="76.0" minHeight="40.0" minWidth="180.0" mnemonicParsing="false" onAction="#signedupreturn" style="-fx-background-color: #A8DADC; -fx-background-radius: 30; -fx-text-fill: BLACK;" text="Return to main page" />
