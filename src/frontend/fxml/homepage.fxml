@@ -20,29 +20,21 @@
                     <children>
                   <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="155.0" prefWidth="246.0" style="-fx-background-color: #457B9D;">
                      <children>
-                        <Label fx:id="welcomeText" layoutX="13.0" layoutY="14.0" text="Welcome Student" textFill="WHITE">
-                           <font>
-                              <Font size="28.0" />
-                           </font>
-                        </Label>
                         <ImageView fitHeight="100.0" fitWidth="150.0" layoutX="48.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true" />
+                              <Button alignment="TOP_LEFT" layoutY="94.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#AssButton" prefHeight="60.0" prefWidth="246.0" stylesheets="@../css/colours.css" text="Assignments" textFill="WHITE">
+                                  <font>
+                                      <Font name="Arial Rounded MT Bold" size="19.0" />
+                                  </font>
+                                  <graphic>
+                                      <ImageView fitHeight="44.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                              <Image url="@../../../../frontend/icons/icons8_task_planning_48px.png" />
+                                          </image>
+                                      </ImageView>
+                                  </graphic>
+                              </Button>
                      </children>
                   </AnchorPane>
-                        <Button alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#AssButton" prefHeight="60.0" prefWidth="246.0" stylesheets="@../css/colours.css" text="Assignments" textFill="WHITE">
-                            <font>
-                                <Font name="Arial Rounded MT Bold" size="19.0" />
-                            </font>
-                            <graphic>
-                                <ImageView fitHeight="44.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../../../../frontend/icons/icons8_task_planning_48px.png" />
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                            <VBox.margin>
-                                <Insets />
-                            </VBox.margin>
-                        </Button>
                   <Button alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#meetingbutton" prefHeight="60.0" prefWidth="246.0" stylesheets="@../css/colours.css" text="Meetings" textFill="WHITE">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="19.0" />
@@ -78,11 +70,6 @@
                                 <Insets top="10.0" />
                             </VBox.margin>
                             <children>
-                                <Label alignment="CENTER" layoutX="32.0" layoutY="68.0" prefHeight="36.0" prefWidth="183.0" text="contact us" textFill="WHITE">
-                                    <font>
-                                        <Font name="Bell MT" size="25.0" />
-                                    </font>
-                                </Label>
                                 <ImageView fitHeight="35.0" fitWidth="45.0" layoutX="27.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true" visible="false">
                                     <image>
                                         <Image url="@../../../../frontend/icons/icons8_facebook_96px.png" />
@@ -98,7 +85,7 @@
                                         <Image url="@../../../../frontend/icons/icons8_gmail_96px.png" />
                                     </image>
                                 </ImageView>
-                        <Button alignment="CENTER" contentDisplay="TEXT_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#signout" prefHeight="60.0" prefWidth="246.0" stylesheets="@../css/colours.css" text="Sign Out" textFill="WHITE">
+                        <Button alignment="CENTER" contentDisplay="TEXT_ONLY" layoutY="118.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#signout" prefHeight="60.0" prefWidth="246.0" stylesheets="@../css/colours.css" text="Sign Out" textFill="WHITE">
                            <font>
                               <Font name="Arial Rounded MT Bold" size="19.0" />
                            </font>
