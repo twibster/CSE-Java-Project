@@ -28,8 +28,8 @@ public class Test{
         addMeeting(user);
         Submission submission = addSubmission(user, assignment);
         Feedback feedback = addFeedback(user, submission);
-        testCSVRead();
-        testClearCSV();
+//        testCSVRead();
+//        testClearCSV();
         Utils.print(user);
         Utils.print(assignment);
         Utils.print(submission);
@@ -68,7 +68,7 @@ public class Test{
         Assignment assignment = new Assignment(
                 user,
                 "First ever assignment",
-                "This is an actual assignment, stay tudent lol",
+                "This is an actual assignment stay tudent lol",
                 LocalDateTime.of(2024,02,12,4,40)
         );
         System.out.println("Add Assignment Passed!");

@@ -1,6 +1,7 @@
 package frontend.controllers;
 
 import backend.Config;
+import backend.Utils;
 import backend.database.CRUD;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -28,6 +29,15 @@ public class main extends Application {
 
     public static void main(String[] args) throws Exception {
         CRUD.readUserFromCSV(Config.usersCSVPath);
+        Utils.print("User database loaded successfully");
+        CRUD.readMeetingFromCSV(Config.meetingsCSVPath);
+        Utils.print("Meetings database loaded successfully");
+        CRUD.readAssignmentFromCSV(Config.assignmentsCSVPath);
+        Utils.print("Assignments database loaded successfully");
+        CRUD.readSubmissionFromCSV(Config.submissionsCSVPath);
+        Utils.print("Submissions database loaded successfully");
+        CRUD.readFeedbackFromCSV(Config.feedbackCSVPath);
+        Utils.print("Feedback database loaded successfully");
         launch(args);
     }
 }

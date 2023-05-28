@@ -37,7 +37,7 @@ public abstract class User {
         this.id = count++;
         database.add(this);
         if (!csv){
-            User.appendUserToCSV(this);
+            User.appendToCSV(this);
         }
     }
     public String getFirst_name(){
@@ -105,6 +105,15 @@ public abstract class User {
         }
         return null;
     }
+
+    public static User fetchByID(int id){
+        for(User user: database){
+            if (Objects.equals(user.id, id)) {
+                return user;
+            }
+        }
+        return null;
+    }
     public static User initializeChild(String first_name, String last_name, String email, String password, Positions position, boolean csv) throws Exception {
         switch (position) {
             case ADMIN -> {
@@ -119,7 +128,7 @@ public abstract class User {
         }
         return null;
     }
-    public static void appendUserToCSV(User user) throws IOException {
+    public static void appendToCSV(User user) throws IOException {
         CRUD.add(createCSVLine(user), Config.usersCSVPath, true);
     }
     public static String createCSVLine(User user){

@@ -1,10 +1,14 @@
 package backend.functionality;
 
+import backend.Config;
+import backend.Utils;
 import backend.constants.MeetingType;
 import backend.constants.Positions;
 import backend.Validators;
+import backend.database.CRUD;
 import backend.users.User;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -17,7 +21,19 @@ public class Meeting {
     private MeetingType type;
     private String info;
     private LocalDateTime date;
-    final LocalDateTime created = LocalDateTime.now();
+    private LocalDateTime created = LocalDateTime.now();
+
+    public Meeting(User creator, String topic,MeetingType type, String info, LocalDateTime date, LocalDateTime created) throws Exception {
+        this.creator = setCreator(creator);
+        setTopic(topic);
+        setType(type);
+        setInfo(info);
+        setDate(date);
+        this.created =created;
+
+        this.id = count++;
+        database.add(this);
+    }
     public Meeting(User creator, String topic,MeetingType type, String info, LocalDateTime date) throws Exception {
         this.creator = setCreator(creator);
         setTopic(topic);
@@ -27,6 +43,7 @@ public class Meeting {
 
         this.id = count++;
         database.add(this);
+        appendToCSV(this);
     }
     private User setCreator(User creator) throws Exception {
         Validators.positionValidator(creator.getPosition(), new Positions[]{Positions.ADMIN, Positions.TEACHER});
@@ -64,7 +81,22 @@ public class Meeting {
     public void setDate(LocalDateTime date) throws Exception {
         this.date = Validators.deadlineValidator(date);
     }
+    public LocalDateTime getCreated() {
+        return created;
+    }
 
+    public static void appendToCSV(Meeting meeting) throws IOException {
+        CRUD.add(createCSVLine(meeting), Config.meetingsCSVPath, true);
+    }
+    public static String createCSVLine(Meeting meeting){
+        return meeting.id+ ","+
+                meeting.creator.id+","+
+                meeting.topic+","+
+                meeting.type+","+
+                meeting.info+","+
+                Utils.dateToString(meeting.date)+","+
+                Utils.dateToString(meeting.created)+"\n";
+    }
     public void deleteMeeting(Meeting meeting){
         database.remove(meeting);
         meeting=null;
@@ -72,7 +104,7 @@ public class Meeting {
 
     @Override
     public String toString() {
-        return "Assignment{" +
+        return "Meeting{" +
                 "id=" + id +
                 ", creator_id=" + creator.id+ '\'' +
                 ", topic='" + topic + '\'' +
