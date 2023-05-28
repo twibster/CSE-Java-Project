@@ -1,5 +1,6 @@
 package frontend.controllers.homepage;
 
+import backend.users.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -57,13 +58,13 @@ public class assignmentsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        txtteacher.setText(User.currentUser.getFirst_name()+" "+ User.currentUser.getLast_name());
         newassignment.setVisible(false);
         lblfile.setVisible(false);
     }
 
     public void addassignments(ActionEvent event) throws IOException {
         newassignment.setVisible(true);
-        System.out.println("HELLO");
     }
 
     //****************************************************************************************************************//

@@ -128,7 +128,6 @@ public class Signup {
 		try{
 			Validators.lengthValidator(txtfname.getText(), 3);
 			fnameerror.setVisible(false);
-			errors = false;
 		}catch (Exception e){
 			if (e instanceof IOException) {
 				fnameerror.setVisible(true);
@@ -138,7 +137,6 @@ public class Signup {
 		try{
 			Validators.lengthValidator(txtlname.getText(), 3);
 			lnameerror.setVisible(false);
-			errors=false;
 		}catch (Exception e){
 			if (e instanceof IOException) {
 				lnameerror.setVisible(true);
@@ -148,17 +146,15 @@ public class Signup {
 		if (User.fetchByEmail(txtemail.getText()) != null){
 			emailerror.setText("This email is already in use");
 			emailerror.setVisible(true);
-			errors = true;
+			errors=true;
 		}
 		else{
 			emailerror.setText(null);
 			emailerror.setVisible(false);
-			errors = false;
 			try{
 				Validators.emailValidator(txtemail.getText());
 				emailerror.setText("");
 				emailerror.setVisible(false);
-				errors = false;
 			}catch (Exception e){
 				if (e instanceof IOException) {
 					emailerror.setText("Not a valid email");
@@ -171,7 +167,6 @@ public class Signup {
 			Validators.passwordValidator(txtpassword.getText());
 			passerror.setText("");
 			passerror.setVisible(false);
-			errors = false;
 		}catch (Exception e){
 			if (e instanceof IOException) {
 				passerror.setText(e.getMessage());
@@ -184,7 +179,7 @@ public class Signup {
 			User user = User.initializeChild(txtfname.getText(), txtlname.getText(), txtemail.getText(), txtpassword.getText(), position, false);
 			registeredpane.setVisible(true);
 			vbox.setDisable(true);
-			signupswitch.setDisable(true);
+//			signupswitch.setDisable(true);
 			btnreturn.setDisable(true);
 			btnsignup.setDisable(true);
 			System.out.println(user);
