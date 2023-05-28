@@ -86,7 +86,7 @@ public class Feedback {
 
     @Override
     public String toString() {
-        return "Submission{" +
+        return "Feedback{" +
                 "id=" + id +
                 ", creator_id=" + creator.id+'\'' +
                 ", assignment_id=" + submission.id+'\'' +
