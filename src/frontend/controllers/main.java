@@ -12,11 +12,9 @@ import javafx.stage.Stage;
 public class main extends Application {
     @Override
     public void start(Stage primaryStage) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("/frontend/fxml/student_system.fxml"));
+        try {//STARTING THE PROGRAM WITH THE FIRST PANELS
+            Parent root = FXMLLoader.load(getClass().getResource("/frontend/fxml/homepage.fxml"));
             Scene scene = new Scene(root);
-            // Uncomment this line and add the application.css file if you want to use a custom CSS
-            // scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 
             primaryStage.setTitle("Student System");
             primaryStage.setScene(scene);
@@ -29,13 +27,13 @@ public class main extends Application {
 
     public static void main(String[] args) throws Exception {
         CRUD.readUserFromCSV(Config.usersCSVPath);
-        Utils.print("User database loaded successfully");
+        backend.Utils.print("User database loaded successfully");
         CRUD.readMeetingFromCSV(Config.meetingsCSVPath);
-        Utils.print("Meetings database loaded successfully");
+        backend.Utils.print("Meetings database loaded successfully");
         CRUD.readAssignmentFromCSV(Config.assignmentsCSVPath);
-        Utils.print("Assignments database loaded successfully");
+        backend.Utils.print("Assignments database loaded successfully");
         CRUD.readSubmissionFromCSV(Config.submissionsCSVPath);
-        Utils.print("Submissions database loaded successfully");
+        backend.Utils.print("Submissions database loaded successfully");
         CRUD.readFeedbackFromCSV(Config.feedbackCSVPath);
         Utils.print("Feedback database loaded successfully");
         launch(args);

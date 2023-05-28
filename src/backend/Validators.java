@@ -2,6 +2,7 @@ package backend;
 
 import backend.constants.Positions;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 
 public class Validators {
@@ -10,7 +11,7 @@ public class Validators {
          if (toCheck.length()>= requiredLength){
             return toCheck;
         }
-        throw new Exception("The provided string is less than " + requiredLength);
+        throw new IOException("The provided string is less than " + requiredLength);
     }
     public static String emailValidator(String email) throws Exception {
          email = email.strip();
@@ -21,7 +22,7 @@ public class Validators {
                  return email;
              }
          }
-         throw new Exception("Not a valid email");
+         throw new IOException("Not a valid email");
     }
     public static String passwordValidator(String password) throws Exception{
          boolean upper = false, lower = false, numeric = false;
@@ -32,10 +33,10 @@ public class Validators {
              else if (Character.isLowerCase(ch)) lower = true;
              length ++;
          }
-         if (length < 8) throw new Exception("Password must be a minimum of 8 characters");
-         if (!numeric) throw new Exception("Password must contain at least one number");
-         if (!upper) throw new Exception("Password must contain at least one upper case character");
-         if (!lower) throw new Exception("Password must contain at least one lower case character");
+         if (length < 8) throw new IOException("Password must be a minimum of 8 characters");
+         if (!numeric) throw new IOException("Password must contain at least one number");
+         if (!upper) throw new IOException("Password must contain at least one upper case character");
+         if (!lower) throw new IOException("Password must contain at least one lower case character");
          return password;
     }
     public static String attachmentValidator(String attachment) throws Exception{
@@ -44,13 +45,13 @@ public class Validators {
          if (beforeAndAfterDot.length == 2){
              return attachment;
          }
-         throw new Exception("Not a valid attachment");
+         throw new IOException("Not a valid attachment");
     }
     public static LocalDateTime deadlineValidator(LocalDateTime deadline) throws Exception{
          if (deadline.isAfter(LocalDateTime.now())){
              return deadline;
          }
-         throw new Exception("Are you living in the past?");
+         throw new IOException("Are you living in the past?");
     }
     public static Positions positionValidator(Positions userPosition, Positions[] requiredPosition) throws Exception {
          for (Positions position: requiredPosition){
@@ -58,12 +59,12 @@ public class Validators {
                  return userPosition;
              }
          }
-         throw new Exception("You do not have permission to do this");
+         throw new IOException("You do not have permission to do this");
     }
     public static double rangeValidator(double toValidate, double gt, double lt) throws Exception {
          if (toValidate>=gt && toValidate<=lt){
              return toValidate;
          }
-        throw new Exception("This number should be between "+gt+" and "+lt);
+        throw new IOException("This number should be between "+gt+" and "+lt);
     }
 }
