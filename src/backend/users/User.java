@@ -22,7 +22,7 @@ public abstract class User {
     private String email;
     private String password;
     Positions position;
-    private int approved = 1;
+    private boolean approved = true;
 
     public User(String first_name, String last_name, String email, String password, Positions position, boolean csv) throws Exception {
 
@@ -86,11 +86,11 @@ public abstract class User {
         return position;
     }
 
-    public int getApproved() {
+    public boolean getApproved() {
         return approved;
     }
 
-    public void setApproved(int approved, User setter) throws Exception {
+    public void setApproved(boolean approved, User setter) throws Exception {
         Validators.positionValidator(setter.position, new Positions[]{Positions.ADMIN});
         this.approved = approved;
     }
