@@ -45,7 +45,7 @@ public class Signin implements Initializable{
         if (user != null){
             if (user.checkPassword(txtpassword.getText())){
                 User.currentUser = user;
-                Utils.redirectScene(this.getClass(),event, "/frontend/fxml/homepage.fxml", stage, scene, user);
+                Utils.redirectScene(this.getClass(),event, "/frontend/fxml/homepage.fxml", stage, scene);
             }
             passerror.setText("Incorrect Password");
             passerror.setTextAlignment(TextAlignment.LEFT);
