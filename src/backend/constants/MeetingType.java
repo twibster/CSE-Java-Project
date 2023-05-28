@@ -19,7 +19,7 @@ public enum MeetingType {
                 return type;
             }
         }
-        throw new IllegalArgumentException("Invalid Position value: " + value);
+        throw new IllegalArgumentException("Invalid meeting value: " + value);
     }
 
 }
