@@ -14,7 +14,7 @@
    <children>
       <AnchorPane fx:id="assignment" layoutX="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="575.0" style="-fx-border-color: #1D3557;">
          <children>
-            <Label alignment="CENTER" layoutY="-2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="176.0" style="-fx-background-color: #A8DADC; -fx-background-radius: 0;" textFill="#1d3557" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <Label alignment="CENTER" layoutY="-2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="176.0" style="-fx-background-color: #2262C6; -fx-background-radius: 0;" textFill="#1d3557" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <font>
                   <Font name="Ebrima" size="25.0" />
                </font>
@@ -25,33 +25,33 @@
                   <Insets left="10.0" />
                </padding>
             </Label>
-            <Text layoutX="423.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deadline:" />
-            <Text layoutX="176.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Topic:" />
-            <Text layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Teacher:" />
+            <Text fill="WHITE" layoutX="423.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deadline:" />
+            <Text fill="WHITE" layoutX="176.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Topic:" />
+            <Text fill="WHITE" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Teacher:" />
             <TextArea fx:id="description" editable="false" layoutX="4.0" layoutY="40.0" prefHeight="87.0" prefWidth="340.0" promptText="Description" wrapText="true">
                <font>
                   <Font size="10.0" />
                </font>
             </TextArea>
             <Button layoutX="495.0" layoutY="83.0" mnemonicParsing="false" onAction="#submit" prefWidth="75.0" style="-fx-background-radius: 25;" stylesheets="@../../css/colours.css" text="Submit" />
-            <Button fx:id="btnedit" layoutX="495.0" layoutY="48.0" mnemonicParsing="false" onAction="#edit" prefWidth="75.0" style="-fx-background-radius: 25;" stylesheets="@../../css/colours.css" text="Edit" />
+            <Button fx:id="btnedit" layoutX="495.0" layoutY="48.0" mnemonicParsing="false" onAction="#edit" prefWidth="75.0" style="-fx-background-radius: 25;" stylesheets="@../../css/colours.css" text="Edit" textFill="WHITE" />
             <Button fx:id="btnattachment" layoutX="370.0" layoutY="71.0" mnemonicParsing="false" onAction="#showattachement" prefHeight="40.0" prefWidth="100.0" style="-fx-background-radius: 25;" stylesheets="@../../css/colours.css" text="Attachment" />
             <Text layoutX="348.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Posted:">
                <font>
                   <Font size="10.0" />
                </font>
             </Text>
-            <Text fx:id="User" layoutX="58.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Teacher" wrappingWidth="112.79999999999995">
+            <Text fx:id="User" fill="WHITE" layoutX="58.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Teacher" wrappingWidth="112.79999999999995">
                <font>
                   <Font size="10.0" />
                </font>
             </Text>
-            <Text fx:id="topic" layoutX="213.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" wrappingWidth="204.5333374023437">
+            <Text fx:id="topic" fill="WHITE" layoutX="213.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" wrappingWidth="204.5333374023437">
                <font>
                   <Font size="10.0" />
                </font>
             </Text>
-            <Text fx:id="deadline" layoutX="486.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" wrappingWidth="84.53327636718745">
+            <Text fx:id="deadline" fill="WHITE" layoutX="486.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" wrappingWidth="84.53327636718745">
                <font>
                   <Font size="10.0" />
                </font>
@@ -63,14 +63,14 @@
             </Text>
             <Button fx:id="btnsaveedit" layoutX="495.0" layoutY="83.0" mnemonicParsing="false" onAction="#saveedit" prefWidth="75.0" style="-fx-background-radius: 25;" stylesheets="@../../css/colours.css" text="Save" visible="false" />
             <Button fx:id="btncanceledit" layoutX="495.0" layoutY="49.0" mnemonicParsing="false" onAction="#canceledit" prefWidth="75.0" style="-fx-background-radius: 25;" stylesheets="@../../css/colours.css" text="Cancel" visible="false" />
-            <Button fx:id="btnremove" layoutX="370.0" layoutY="71.0" mnemonicParsing="false" onAction="#removeASS" prefHeight="40.0" prefWidth="100.0" style="-fx-background-radius: 25;" stylesheets="@../../css/colours.css" text="Remove" />
-            <Button fx:id="btnfeedback" layoutX="495.0" layoutY="83.0" mnemonicParsing="false" onAction="#assignfeedback" prefWidth="75.0" style="-fx-background-radius: 25;" stylesheets="@../../css/colours.css" text="Feedback" />
+            <Button fx:id="btnremove" layoutX="373.0" layoutY="71.0" mnemonicParsing="false" onAction="#removeASS" prefHeight="40.0" prefWidth="100.0" style="-fx-background-radius: 25;" stylesheets="@../../css/colours.css" text="Remove" textFill="WHITE" />
+            <Button fx:id="btnfeedback" layoutX="495.0" layoutY="83.0" mnemonicParsing="false" onAction="#assignfeedback" prefWidth="75.0" style="-fx-background-radius: 25;" stylesheets="@../../css/colours.css" text="Feedback" textFill="WHITE" />
             <DatePicker fx:id="datepicker" layoutX="474.0" layoutY="6.0" onAction="#newdeadline" prefHeight="22.0" prefWidth="100.0" promptText="deadline" visible="false" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="submitscreen" layoutX="2.0" layoutY="-1.0" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="-1.0">
          <children>
-            <Label alignment="CENTER" layoutX="48.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="176.0" style="-fx-background-color: #A8DADC; -fx-background-radius: 0;" text="Submit Assignment" textFill="#1d3557" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Label alignment="CENTER" layoutX="48.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="176.0" style="-fx-background-color: #2262C6; -fx-background-radius: 0;" text="Submit Assignment" textFill="#1d3557" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <font>
                   <Font name="Ebrima" size="25.0" />
                </font>
@@ -93,7 +93,7 @@
       </AnchorPane>
       <AnchorPane fx:id="feedback" prefHeight="126.0" prefWidth="552.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label alignment="CENTER" layoutY="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="176.0" style="-fx-background-color: #A8DADC; -fx-background-radius: 0;" text="FeedBack" textFill="#1d3557" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+            <Label alignment="CENTER" layoutY="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="176.0" style="-fx-background-color: #2262C6; -fx-background-radius: 0;" text="FeedBack" textFill="#1d3557" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
                <font>
                   <Font name="Ebrima" size="25.0" />
                </font>

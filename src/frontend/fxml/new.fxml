@@ -62,7 +62,7 @@
                         </Button>
                         <Pane prefHeight="126.0" prefWidth="246.0">
                             <VBox.margin>
-                                <Insets top="10.0" />
+                                <Insets top="120.0" />
                             </VBox.margin>
                             <children>
                                 <Label layoutX="50.0" layoutY="29.0" prefHeight="36.0" prefWidth="183.0" text="contact us" textFill="WHITE">

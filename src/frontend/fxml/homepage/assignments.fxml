@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="645.0" style="-fx-background-color: #F1FAEE;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontend.controllers.homepage.assignmentsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="645.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontend.controllers.homepage.assignmentsController">
    <children>
-      <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #A8DADC; -fx-background-radius: 0;" text="Assignments" textFill="#1d3557" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+      <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #2262C6; -fx-background-radius: 0;" text="Assignments" textFill="WHITE" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
          <font>
             <Font name="Ebrima" size="25.0" />
          </font>
@@ -27,7 +27,7 @@
       </Label>
       <AnchorPane layoutX="223.0" layoutY="175.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="615.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="65.0">
          <children>
-            <Button layoutX="421.0" layoutY="8.0" mnemonicParsing="false" onAction="#addassignments" prefHeight="30.0" prefWidth="180.0" style="-fx-background-radius: 15;" stylesheets="@../../css/colours.css" text="Add new Assignment" />
+            <Button layoutX="421.0" layoutY="8.0" mnemonicParsing="false" onAction="#addassignments" prefHeight="30.0" prefWidth="180.0" style="-fx-background-radius: 15;" stylesheets="@../../css/colours.css" text="Add new Assignment" textFill="WHITE" />
             <ScrollPane hbarPolicy="NEVER" layoutX="-1.0" layoutY="61.0" prefHeight="409.0" prefWidth="616.0" style="-fx-blend-mode: multiply; -fx-background-color: #F1FAEE;" styleClass="button" vbarPolicy="NEVER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="55.0">
                <content>
                   <VBox fx:id="vbox" blendMode="SRC_ATOP" prefHeight="200.0" prefWidth="615.0" spacing="15.0">
@@ -39,7 +39,7 @@
             </ScrollPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="newassignment" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="645.0" style="-fx-background-color: #F1FAEE;" visible="false">
+      <AnchorPane fx:id="newassignment" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="645.0" style="-fx-background-color: #FFF;">
          <children>
             <VBox layoutX="15.0" layoutY="231.0" prefHeight="200.0" prefWidth="615.0" spacing="5.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="65.0">
                <children>
@@ -50,7 +50,7 @@
                               <Font size="25.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txttopic" prefHeight="26.0" prefWidth="475.0" style="-fx-background-color: #A8DADC;">
+                        <TextField fx:id="txttopic" prefHeight="26.0" prefWidth="475.0" style="-fx-background-color: #2262C6;">
                            <HBox.margin>
                               <Insets top="6.0" />
                            </HBox.margin>
@@ -87,7 +87,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtteacher" editable="false" prefHeight="18.0" prefWidth="200.0" style="-fx-background-color: #A8DADC;">
+                        <TextField fx:id="txtteacher" editable="false" prefHeight="18.0" prefWidth="200.0" style="-fx-background-color: #2262C6;">
                            <HBox.margin>
                               <Insets top="1.0" />
                            </HBox.margin>
@@ -117,9 +117,9 @@
                   </HBox>
                   <AnchorPane prefHeight="102.0" prefWidth="616.0">
                      <children>
-                        <Button layoutX="428.0" layoutY="-86.0" mnemonicParsing="false" onAction="#uploadattachement" prefHeight="40.0" prefWidth="150.0" style="-fx-background-radius: 25;" stylesheets="@../../css/colours.css" text="Upload Attachement" />
-                        <Button layoutX="431.0" layoutY="31.0" mnemonicParsing="false" onAction="#saveassignment" prefHeight="40.0" prefWidth="150.0" style="-fx-background-radius: 25;" stylesheets="@../../css/colours.css" text="Save &amp; Upload" />
-                        <Button layoutX="34.0" layoutY="31.0" mnemonicParsing="false" onAction="#cancelassignment" prefHeight="40.0" prefWidth="150.0" style="-fx-background-radius: 25;" stylesheets="@../../css/colours.css" text="Cancel" />
+                        <Button layoutX="428.0" layoutY="-86.0" mnemonicParsing="false" onAction="#uploadattachement" prefHeight="40.0" prefWidth="150.0" style="-fx-background-radius: 25;" stylesheets="@../../css/colours.css" text="Upload Attachement" textFill="WHITE" />
+                        <Button layoutX="431.0" layoutY="31.0" mnemonicParsing="false" onAction="#saveassignment" prefHeight="40.0" prefWidth="150.0" style="-fx-background-radius: 25;" stylesheets="@../../css/colours.css" text="Save &amp; Upload" textFill="WHITE" />
+                        <Button layoutX="34.0" layoutY="31.0" mnemonicParsing="false" onAction="#cancelassignment" prefHeight="40.0" prefWidth="150.0" style="-fx-background-radius: 25;" stylesheets="@../../css/colours.css" text="Cancel" textFill="WHITE" />
                         <DatePicker fx:id="txtdeadline" layoutX="142.0" layoutY="-32.0" onAction="#choosedate" />
                         <Label fx:id="lblfile" layoutX="446.0" layoutY="-37.0" prefHeight="18.0" prefWidth="120.0">
                            <font>
@@ -133,7 +133,7 @@
                   <Insets top="15.0" />
                </padding>
             </VBox>
-            <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #A8DADC; -fx-background-radius: 0;" text="Add new Assignment" textFill="#1d3557" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+            <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #2262C6; -fx-background-radius: 0;" text="Add new Assignment" textFill="WHITE" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
                <font>
                   <Font name="Ebrima" size="25.0" />
                </font>
