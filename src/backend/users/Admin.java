@@ -1,7 +1,11 @@
 package backend.users;
 
+import backend.constants.MeetingType;
 import backend.constants.Positions;
 import backend.functionality.Assignment;
+import backend.functionality.Feedback;
+import backend.functionality.Meeting;
+import backend.functionality.Submission;
 
 import java.time.LocalDateTime;
 
@@ -14,5 +18,11 @@ public class Admin extends User {
     }
     public Assignment createAssignment(String title, String body, LocalDateTime deadline) throws Exception {
         return new Assignment(this, title, body, deadline);
+    }
+    public Meeting createMeeting(User creator, String topic, MeetingType type, String info, LocalDateTime date) throws Exception {
+        return new Meeting(this, topic, type, info, date);
+    }
+    public Feedback createFeedback(User creator, Submission submission, double score, String notes) throws Exception {
+        return new Feedback(this, submission, score, notes);
     }
 }

@@ -1,10 +1,13 @@
 package backend.tests;
 
 import backend.Config;
+import backend.Utils;
 import backend.constants.MeetingType;
 import backend.constants.Positions;
 import backend.database.CRUD;
+import backend.functionality.Feedback;
 import backend.functionality.Meeting;
+import backend.functionality.Submission;
 import backend.users.Admin;
 import backend.users.Student;
 import backend.users.User;
@@ -21,10 +24,16 @@ public class Test{
 
         User user = addUser();
         emailExists();
-        addAssignment(user);
+        Assignment assignment = addAssignment(user);
         addMeeting(user);
+        Submission submission = addSubmission(user, assignment);
+        Feedback feedback = addFeedback(user, submission);
         testCSVRead();
         testClearCSV();
+        Utils.print(user);
+        Utils.print(assignment);
+        Utils.print(submission);
+        Utils.print(feedback);
     }
 
     public static User addUser() throws Exception {
@@ -77,6 +86,25 @@ public class Test{
         );
         System.out.println("Add Meeting Passed!");
         return meeting;
+    }
+    public static Submission addSubmission(User user, Assignment assignment) throws Exception {
+        Submission submission = new Submission(
+                user,
+                assignment,
+                "this is my first submission"
+        );
+        System.out.println("Add Submission Passed!");
+        return submission;
+    }
+    public static Feedback addFeedback(User user, Submission submission) throws Exception {
+        Feedback feedback = new Feedback(
+                user,
+                submission,
+                8,
+                "this is my first submission"
+        );
+        System.out.println("Add Feedback Passed!");
+        return feedback;
     }
     public static void testCSVRead(){
         try {

@@ -82,11 +82,11 @@ public class Assignment{
     public String toString() {
         return "Assignment{" +
                 "id=" + id +
-                ", creator_id=" + creator.id+
+                ", creator_id=" + creator.id+ '\'' +
                 ", title='" + title + '\'' +
                 ", body='" + body + '\'' +
                 ", attachment='" + attachment + '\'' +
-                ", deadline=" + deadline +
+                ", deadline=" + deadline + '\'' +
                 ", created=" + created +
                 '}';
     }

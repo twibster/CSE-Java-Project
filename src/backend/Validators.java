@@ -60,4 +60,10 @@ public class Validators {
          }
          throw new Exception("You do not have permission to do this");
     }
+    public static double rangeValidator(double toValidate, double gt, double lt) throws Exception {
+         if (toValidate>=gt && toValidate<=lt){
+             return toValidate;
+         }
+        throw new Exception("This number should be between "+gt+" and "+lt);
+    }
 }

@@ -65,20 +65,20 @@ public class Meeting {
         this.date = Validators.deadlineValidator(date);
     }
 
-    public void deleteAssignment(Meeting assignment){
-        database.remove(assignment);
-        assignment=null;
+    public void deleteMeeting(Meeting meeting){
+        database.remove(meeting);
+        meeting=null;
     }
 
     @Override
     public String toString() {
         return "Assignment{" +
                 "id=" + id +
-                ", creator_id=" + creator.id+
+                ", creator_id=" + creator.id+ '\'' +
                 ", topic='" + topic + '\'' +
                 ", type='" + type + '\'' +
                 ", info='" + info + '\'' +
-                ", date=" + date +
+                ", date=" + date + '\'' +
                 ", created=" + created +
                 '}';
     }
