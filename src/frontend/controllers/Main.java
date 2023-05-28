@@ -9,11 +9,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class main extends Application {
+public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {//STARTING THE PROGRAM WITH THE FIRST PANELS
-            Parent root = FXMLLoader.load(getClass().getResource("/frontend/fxml/homepage.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/frontend/fxml/signin.fxml"));
             Scene scene = new Scene(root);
 
             primaryStage.setTitle("Student System");

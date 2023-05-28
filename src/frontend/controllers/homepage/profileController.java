@@ -1,16 +1,20 @@
 package frontend.controllers.homepage;
 
 import backend.users.User;
-import frontend.controllers.mainPageController;
+import frontend.controllers.Signin;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.net.URL;
+import java.util.EventObject;
 import java.util.ResourceBundle;
 
 public class profileController implements Initializable {
@@ -39,8 +43,6 @@ public class profileController implements Initializable {
     @FXML
     private PasswordField txtconfirmpass;
 
-
-    private User current_user = mainPageController.current_user; //FIGURE THIS OUT
     //****************************************************************************************************************//
     //EDIT USER PROFILE PANEL
 
@@ -110,9 +112,8 @@ public class profileController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        System.out.println(current_user);
-        /*txtname.setText(current_user.getFirst_name());
-        txtemail.setText(current_user.getEmail());
-        txtid.setText(current_user.getID() +"");*/
+        txtname.setText(User.currentUser.getFirst_name());
+        txtemail.setText(User.currentUser.getEmail());
+        txtid.setText(Integer.toString(User.currentUser.id));
     }
 }

@@ -16,12 +16,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class mainPageController implements Initializable{
+public class Signin implements Initializable{
 
     private Stage stage;
     private Scene scene;
-
-    public static User current_user;
 
     @FXML
     private TextField txtemail;
@@ -46,8 +44,8 @@ public class mainPageController implements Initializable{
         User user = User.fetchByEmail(txtemail.getText());
         if (user != null){
             if (user.checkPassword(txtpassword.getText())){
-                Utils.redirectScene(this.getClass(),event, "/frontend/fxml/homepage.fxml", stage, scene);
-                current_user = user;
+                User.currentUser = user;
+                Utils.redirectScene(this.getClass(),event, "/frontend/fxml/homepage.fxml", stage, scene, user);
             }
             passerror.setText("Incorrect Password");
             passerror.setTextAlignment(TextAlignment.LEFT);

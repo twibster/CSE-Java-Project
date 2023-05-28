@@ -12,19 +12,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Utils {
-
-    public static void redirectScene(Class from, ActionEvent event, String scenePath, Stage stage, Scene scene, User user) throws IOException {
-
-        Parent root = FXMLLoader.load(from.getResource(scenePath));
-
-        stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
-        stage.setUserData(user);
-        scene = new Scene(root);
-        stage.setScene(scene);
-
-        stage.show();
-
-    }
     public static void redirectScene(Class from, ActionEvent event, String scenePath, Stage stage, Scene scene) throws IOException {
 
         Parent root = FXMLLoader.load(from.getResource(scenePath));

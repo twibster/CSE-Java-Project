@@ -12,7 +12,10 @@ import java.util.Objects;
 
 public abstract class User {
     private static int count;
+
     public static ArrayList<User> database = new ArrayList<>();
+    public static User currentUser;
+
     public final int id;
     private String first_name;
     private String last_name;

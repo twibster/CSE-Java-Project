@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class userHomepageController implements Initializable {
+public class Homepage implements Initializable {
 
     private Stage stage;
     private Scene scene;
@@ -107,8 +107,8 @@ public class userHomepageController implements Initializable {
     @FXML
     private void signout(ActionEvent event) throws IOException {//ON SIGNOUT BUTTON CLICK
         Parent fxml;
-        fxml = FXMLLoader.load(getClass().getResource("/frontend/fxml/student_system1.fxml"));
-        Utils.redirectScene(this.getClass(), event, "/frontend/fxml/student_system1.fxml", stage, scene);
+        fxml = FXMLLoader.load(getClass().getResource("/frontend/fxml/signin.fxml"));
+        Utils.redirectScene(this.getClass(), event, "/frontend/fxml/signin.fxml", stage, scene);
 
     }
 

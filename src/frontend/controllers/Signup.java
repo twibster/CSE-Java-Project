@@ -20,7 +20,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class signupcontroller {
+public class Signup {
 
 	private Stage stage;
 	private Scene scene;
@@ -196,12 +196,12 @@ public class signupcontroller {
 
     @FXML
 	void returnToMainPage(ActionEvent event) throws IOException { //RETURNING WITHOUT USER CREATION
-		Utils.redirectScene(this.getClass(),event,"/frontend/fxml/student_system1.fxml", stage, scene);
+		Utils.redirectScene(this.getClass(),event, "/frontend/fxml/signin.fxml", stage, scene);
 	}
 
 	@FXML
 	void signedupreturn(ActionEvent event) throws IOException{ //RETURNING AFTER USER CREATION POPUP
-		Utils.redirectScene(this.getClass(), event, "/frontend/fxml/student_system1.fxml", stage, scene);
+		Utils.redirectScene(this.getClass(), event, "/frontend/fxml/signin.fxml", stage, scene);
 
 	}
 
