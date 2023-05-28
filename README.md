@@ -32,4 +32,32 @@ The CRUD class in the backend.database package provides functions for reading fr
 The Assignment and Feedback classes in the backend.functionality package represent assignment and feedback entities, respectively. They include fields and methods for managing assignment and feedback data, such as title, body, attachment, deadline, score, and notes. These classes also provide methods for appending records to the respective CSV files and fetching records by ID.
 
 Please note that the provided code is not complete and may require additional implementation to function properly. Make sure to review and test the code thoroughly before using it in a production environment.
-                                                                                                                                                                                                                                                                                                                                
+                                                       
+Authored  by:
+███ █▄┼▄█ ███ ███ ┼┼ ███ █┼█ ███ █┼█ ███ ███ ███
+█┼█ █┼█┼█ █▄█ █▄┼ ┼┼ █▄▄ █▄█ █▄┼ █▄█ █▄█ ┼█┼ █▄█
+█▄█ █┼┼┼█ █┼█ █┼█ ┼┼ ▄▄█ █┼█ █▄▄ █┼█ █┼█ ┼█┼ █┼█
+
+███ ██▄ ██▄ █┼█ █┼┼ ███ ███ █┼█ █▄┼▄█ ███ █┼┼█ ┼┼ ███ █▄┼▄█ ███ ███
+█▄█ █▄█ █┼█ █┼█ █┼┼ █▄┼ █▄█ █▄█ █┼█┼█ █▄█ ██▄█ ┼┼ █┼█ █┼█┼█ █▄█ █▄┼
+█┼█ █▄█ ███ ███ █▄█ █┼█ █┼█ █┼█ █┼┼┼█ █┼█ █┼██ ┼┼ █▄█ █┼┼┼█ █┼█ █┼█
+
+█▄┼▄█ ███ █┼█ ███ █▄┼▄█ ███ ██▄ ┼┼ ███ █┼┼ ███
+█┼█┼█ █┼█ █▄█ █▄█ █┼█┼█ █▄┼ █┼█ ┼┼ █▄█ █┼┼ ┼█┼
+█┼┼┼█ █▄█ █┼█ █┼█ █┼┼┼█ █▄▄ ███ ┼┼ █┼█ █▄█ ▄█▄
+
+█╬█ ███ █╬█ ███ █╬█ ██ ██▄ ╬╬ █╬█ ███ █╬╬█ █╬█ 
+█V█ █╬█ █▄█ █▄█ █V█ █▄ █╬█ ╬╬ █▄█ █▄█ ██▄█ █▄█ 
+█╬█ █▄█ █╬█ █╬█ █╬█ █▄ ███ ╬╬ █╬█ █╬█ █╬██ ╬█╬ 
+
+█╬█ █╬█ ███ █╬ ██ ██▄ ╬╬ █╬█ ███ █╬█ █╬█ ███ █╬█ ██▄
+██▄ █▄█ █▄█ █╬ █▄ █╬█ ╬╬ █V█ █▄█ █▄█ █V█ █╬█ █╬█ █╬█
+█╬█ █╬█ █╬█ ██ █▄ ███ ╬╬ █╬█ █╬█ █╬█ █╬█ █▄█ ███ ███
+
+███ █┼█ █▄┼▄█ ███ ██▄ ┼┼ █▄┼▄█ ███ █┼█ ███ █▄┼▄█ ███ ██▄
+█▄█ █▄█ █┼█┼█ █▄┼ █┼█ ┼┼ █┼█┼█ █┼█ █▄█ █▄█ █┼█┼█ █▄┼ █┼█
+█┼█ █┼█ █┼┼┼█ █▄▄ ███ ┼┼ █┼┼┼█ █▄█ █┼█ █┼█ █┼┼┼█ █▄▄ ███
+
+█┼█ █┼█ ███ █┼┼ ███ ██▄ ┼┼ █▄┼▄█ ███ █┼█ █▄┼▄█ ███ █┼█ ██▄
+██▄ █▄█ █▄█ █┼┼ █▄┼ █┼█ ┼┼ █┼█┼█ █▄█ █▄█ █┼█┼█ █┼█ █┼█ █┼█
+█┼█ █┼█ █┼█ █▄█ █▄▄ ███ ┼┼ █┼┼┼█ █┼█ █┼█ █┼┼┼█ █▄█ ███ ███
