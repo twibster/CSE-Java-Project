@@ -19,14 +19,12 @@
             <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="350.0">
                <children>
                   <TextField fx:id="txtfname" layoutX="50.0" layoutY="24.0" prefHeight="20.0" prefWidth="250.0" promptText="First Name" style="-fx-background-radius: 20; -fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" AnchorPane.topAnchor="24.0" />
-                  <Text layoutX="52.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  First Name" />
                   <Text fx:id="fnameerror" fill="#ae0303" layoutX="56.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter a valid Name" textAlignment="RIGHT" visible="false" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="81.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="350.0">
                <children>
                   <TextField fx:id="txtlname" layoutX="50.0" layoutY="15.0" prefHeight="20.0" prefWidth="250.0" promptText="Last Name" style="-fx-background-radius: 20; -fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" AnchorPane.topAnchor="24.0" />
-                  <Text layoutX="52.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Last Name" />
                   <Text fx:id="lnameerror" fill="#ae0303" layoutX="57.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter a valid Name " textAlignment="RIGHT" visible="false" />
                </children>
                <VBox.margin>
@@ -36,7 +34,6 @@
             <AnchorPane layoutX="10.0" layoutY="81.0" prefHeight="40.0" prefWidth="200.0">
                <children>
                   <TextField fx:id="txtemail" layoutX="50.0" layoutY="27.0" prefHeight="20.0" prefWidth="250.0" promptText="Example@gmail.com" style="-fx-background-radius: 20; -fx-background-color: transparen transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" AnchorPane.topAnchor="27.0" />
-                  <Text layoutX="50.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  Email" />
                   <Text fx:id="emailerror" fill="#ae0303" layoutX="58.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter a valid Email" textAlignment="RIGHT" visible="false" />
                </children>
                <VBox.margin>
@@ -45,7 +42,6 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="65.0" prefHeight="40.0" prefWidth="194.0">
                <children>
-                  <Text layoutX="55.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
                   <PasswordField fx:id="txtpassword" layoutX="50.0" layoutY="24.0" minWidth="250.0" prefHeight="26.0" prefWidth="250.0" promptText="Enter Your Password" style="-fx-background-color: transparent; -fx-background-radius: 20; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
                   <Text fx:id="passerror" fill="#ae0303" layoutX="59.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter a valid Password" visible="false" wrappingWidth="250.0" />
                </children>
